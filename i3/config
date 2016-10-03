@@ -16,6 +16,10 @@ exec_always --no-startup-id xrandr --output eDP1 --primary && sleep 0.15
 exec_always --no-startup-id variety
 exec_always --no-startup-id nm-applet
 
+# let's see if this breaks everything
+# exec_always --no-startup-id cinnamon-settings-daemon
+# yep, it breaks
+#
 set $mod Mod4
 
 bindsym $mod+P exec --no-startup-id 
@@ -29,6 +33,7 @@ set $white  #839496
 set $gray   #CCCCCC
 set $darkgray   #666666
 set $green  #799F26
+set $grayblue   #33334d
 set $blue   #4D73AA
 set $purple #8473A7
 set $red    #B58900
@@ -64,6 +69,7 @@ bindsym $mod+t exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+c kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -182,10 +188,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
+# Background colors are the border colors really
 #class                  border  backgr. text    indicator   child_border
 client.focused          $orange $orange  $dark    $dark      $orange
-client.unfocused        $dark   $dark   $white   $white     $dark
+client.unfocused        $grayblue   $grayblue   $white   $white     $dark
 client.focused_inactive $orange   $dark   $white   $dark
 client.urgent           $orange $orange $dark    $white
 client.background       $dark
