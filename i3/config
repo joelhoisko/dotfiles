@@ -15,6 +15,7 @@
 exec_always --no-startup-id xrandr --output eDP1 --primary && sleep 0.15
 exec_always --no-startup-id variety
 exec_always --no-startup-id nm-applet
+exec_always --no-startup-id dunst
 
 # let's see if this breaks everything
 # exec_always --no-startup-id cinnamon-settings-daemon
@@ -29,7 +30,7 @@ bindsym $mod+G exec --no-startup-id google-chrome-stable
 
 # Some colors
 set $black   #002B36
-set $white  #839496
+set $white  #FFFFFF
 set $gray   #CCCCCC
 set $darkgray   #666666
 set $green  #799F26
@@ -205,7 +206,11 @@ bar {
         tray_output primary
 	position top
         colors {
+                                #border #background #text
             background $darkgray
+            focused_workspace   $orange $gray   $white
+            active_workspace    $orange $dark   $white
+            urgent_workspace    $dark   $orange $white
         }
 }
 # Screen brightness controls
