@@ -1,9 +1,0 @@
-*
-
-!.gitignore
-!i3/
-!i3/*
-!nvim/
-!nvim/*
-!i3status/
-!i3status/*
