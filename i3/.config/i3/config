@@ -17,14 +17,16 @@
 exec_always --no-startup-id nm-applet
 #exec_always --no-startup-id dunst
 exec_always compton -b
+exec_always --no-startup-id dropbox start
+
+# Random background every time
+exec_always --no-startup-id feh --randomize --bg-scale ~/Dropbox/Wallsuffle/Graphical/*
 
 # let's see if this breaks everything
 # exec_always --no-startup-id cinnamon-settings-daemon
 # yep, it breaks
 #
 set $mod Mod4
-
-bindsym $mod+P exec --no-startup-id 
 
 # Custom application keybinds
 bindsym $mod+G exec --no-startup-id chromium-browser 
@@ -51,7 +53,7 @@ font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 bindsym $mod+t exec i3-sensible-terminal
 
 # kill focused window
@@ -94,10 +96,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+v split h
+bindsym $mod+Shift+v split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -197,10 +199,13 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # Configure window borders
 # new_window pixel 2
 for_window [class="^.*"] border pixel 2
-gaps inner 20
+gaps inner 30
 gaps outer -10
 smart_gaps on
 smart_borders no_gaps
+
+bindsym $mod+i gaps inner current plus 5
+bindsym $mod+Shift+i gaps inner current minus 5
 
 # i3bar settings and colors
 bar {
@@ -240,15 +245,14 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 # Hovering over window doesn't take the focus
 focus_follows_mouse no
 
-set $Lock gnome-screensaver-command -l
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-     bindsym l exec --no-startup-id $Lock, mode "default"
-     bindsym e exec --no-startup-id i3exit logout, mode "default"
-     bindsym s exec --no-startup-id i3exit suspend, mode "default"
-     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-     bindsym r exec --no-startup-id i3exit reboot, mode "default"
-     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+     bindsym l exec --no-startup-id gnome-screensaver-command -l, mode "default"
+     bindsym e exec --no-startup-id i3-msg exit, mode "default"
+     bindsym s exec --no-startup-id systemctl suspend, mode "default"
+     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+     bindsym r exec --no-startup-id systemctl reboot, mode "default"
+     bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
 
      # back to normal: Enter or Escape
      bindsym Return mode "default"

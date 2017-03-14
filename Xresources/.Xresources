@@ -1,7 +1,3 @@
-! general terminal font
-xterm*font:     Fira Mono 10
-
-
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
@@ -12,9 +8,62 @@ rofi.color-active: argb:7c4c4c4c, #268bd2, #eee8d5, #268bd2, #fdf6e3
 rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
 
 rofi.font:              Fira Mono 15
-rofi.padding:           330
 rofi.lines:             3
 rofi.fullscreen:        true
+rofi.padding:           440
 rofi.hide-scrollbar:    true
 rofi.fuzzy:             true
-rofi.fixed-num-lines:   true
+
+
+
+! URxvt settings
+URxvt.depth:        32
+URxvt.scrollBar:    false
+URxvt.cursorBlink:  true
+URxvt.cursorUnderline:  true
+
+!URxvt.transparent:  true
+!URxvt.shading:      30
+
+! URxvt font
+URxvt.allow_bold:   true
+URxvt*font:         xft:Fira Mono:pixelsize=16
+URxvt*boldFont:     xft:Fira Mono:pixelsize=18
+
+
+! special
+URxvt*foreground:   #c3c7d1
+URxvt*background:   [82]#1e282c
+URxvt*cursorColor:  #c3c7d1
+
+! black
+URxvt*color0:       #073641
+URxvt*color8:       #002b36
+
+! red
+URxvt*color1:       #eb606b
+URxvt*color9:       #eb606b
+
+! green
+URxvt*color2:       #c3e88d
+URxvt*color10:      #c3e88d
+
+! yellow
+URxvt*color3:       #f7eb95
+URxvt*color11:      #f7eb95
+
+! blue
+URxvt*color4:       #80cbc3
+URxvt*color12:      #7dc6bf
+
+! magenta
+URxvt*color5:       #ff2490
+URxvt*color13:      #6c71c3
+
+! cyan
+URxvt*color6:       #aeddff
+URxvt*color14:      #34434d
+
+! white
+URxvt*color7:       #ffffff
+URxvt*color15:      #ffffff
