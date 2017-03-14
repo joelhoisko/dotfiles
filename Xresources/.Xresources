@@ -28,12 +28,12 @@ URxvt.cursorUnderline:  true
 ! URxvt font
 URxvt.allow_bold:   true
 URxvt*font:         xft:Fira Mono:pixelsize=16
-URxvt*boldFont:     xft:Fira Mono:pixelsize=18
+URxvt*boldFont:     xft:Fira Mono:bold:pixelsize=18
 
 
 ! special
 URxvt*foreground:   #c3c7d1
-URxvt*background:   [82]#1e282c
+URxvt*background:   [85]#1e282c
 URxvt*cursorColor:  #c3c7d1
 
 ! black
