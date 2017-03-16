@@ -1,20 +1,28 @@
-! ------------------------------------------------------------------------------
+! Define some colors
+#define bg #1e282c
+#define fg #c3c7d1
+#define alphabg [85]#1e282c
+#define rofibg argb:0fdf6e3
+
+! ------------------------------------------------------
 ! ROFI Color theme
-! ------------------------------------------------------------------------------
+! ------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: argb:b7282828, argb:0002b36, #000000
-rofi.color-normal: argb:0fdf6e3, #ebdbb2, argb:0eee8d5, argb:85665c54, #eee8d5
-rofi.color-active: argb:7c4c4c4c, #268bd2, #eee8d5, #268bd2, #fdf6e3
-rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
+!                   bg              border          separator
+rofi.color-window:  argb:d41e282c,  argb:0002b36,   #000000
+!                   bg       	fg      altbg   hlbg     	    hlfg
+rofi.color-normal:  rofibg,     fg,     rofibg, argb:5080cbc3,  fg
+
+! unnecessary stuff?
+!rofi.color-active: argb:7c4c4c4c, #268bd2, #eee8d5, #268bd2, #fdf6e3
+!rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
 
 rofi.font:              Fira Mono 15
-rofi.lines:             3
+rofi.lines:             7
 rofi.fullscreen:        true
-rofi.padding:           440
+rofi.padding:           400
 rofi.hide-scrollbar:    true
 rofi.fuzzy:             true
-
-
 
 ! URxvt settings
 URxvt.depth:        32
@@ -22,19 +30,15 @@ URxvt.scrollBar:    false
 URxvt.cursorBlink:  true
 URxvt.cursorUnderline:  true
 
-!URxvt.transparent:  true
-!URxvt.shading:      30
-
 ! URxvt font
 URxvt.allow_bold:   true
 URxvt*font:         xft:Fira Mono:pixelsize=16
 URxvt*boldFont:     xft:Fira Mono:bold:pixelsize=18
 
-
 ! special
-URxvt*foreground:   #c3c7d1
-URxvt*background:   [85]#1e282c
-URxvt*cursorColor:  #c3c7d1
+URxvt*foreground:   fg
+URxvt*background:   alphabg
+URxvt*cursorColor:  fg
 
 ! black
 URxvt*color0:       #073641
