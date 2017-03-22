@@ -118,3 +118,5 @@ fi
 
 # Custom terminal prompt
 export PS1="\W \\$ \[$(tput sgr0)\]"
+
+export PATH="$HOME/.node_modules_global/bin:$PATH"

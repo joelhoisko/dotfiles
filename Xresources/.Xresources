@@ -29,6 +29,7 @@ URxvt.depth:        32
 URxvt.scrollBar:    false
 URxvt.cursorBlink:  true
 URxvt.cursorUnderline:  true
+URxvt.internalBorder:   20
 
 ! URxvt font
 URxvt.allow_bold:   true

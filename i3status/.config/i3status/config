@@ -60,10 +60,11 @@ battery 0 {
         status_bat = "⚡"
         status_full = "☻ Full"
         path = "/sys/class/power_supply/BAT0/uevent"
-        low_threshold = "40"
-        threshold_type = "time"
+        low_threshold = "25"
+        threshold_type = "percentage"
         integer_battery_capacity = true
         hide_seconds = true
+        last_full_capacity = true
 }
 
 run_watch DHCP {
