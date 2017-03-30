@@ -1,0 +1,8 @@
+#! /bin/bash
+# Simple script for using multiple displays with the Dell D3100 Docking Station
+
+xrandr --output eDP-1-1 --auto --primary 
+echo "Primary monitor eDP-1-1 set"
+xrandr --output DVI-I-2-1 --auto --left-of eDP-1-1
+echo "DVI-I-2-1 set to the left"
+
