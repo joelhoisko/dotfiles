@@ -15,6 +15,7 @@
 #exec_always --no-startup-id xrandr --output eDP1 --primary && sleep 0.15
 # start compton first and wait for it to get working
 exec --no-startup-id compton -b
+exec_always --no-startup-id xinput -set-prop "Logitech M705" "Device Accel Constant Deceleration" 2
 
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id dunst
@@ -23,7 +24,7 @@ exec shutter --min_at_startup
 exec xrdb ~/.Xresources
 
 # Random background every time
-exec_always --no-startup-id feh --randomize --bg-scale ~/Dropbox/Wallsuffle/Graphical/*
+exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/1920x1200/*
 
 # let's see if this breaks everything
 # exec_always --no-startup-id cinnamon-settings-daemon
@@ -165,16 +166,16 @@ mode "resize" {
 	# Pressing right will grow the window’s width.
 	# Pressing up will shrink the window’s height.
 	# Pressing down will grow the window’s height.
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
+	bindsym h resize shrink width 8 px or 8 ppt
+	bindsym k resize grow height 8 px or 8 ppt
+	bindsym j resize shrink height 8 px or 8 ppt
+	bindsym l resize grow width 8 px or 8 ppt
 
 	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Left resize shrink width 8 px or 8 ppt
+	bindsym Up resize grow height 8 px or 8 ppt
+	bindsym Down resize shrink height 8 px or 8 ppt
+	bindsym Right resize grow width 8 px or 8 ppt
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"

@@ -120,3 +120,4 @@ fi
 export PS1="\W \\$ \[$(tput sgr0)\]"
 
 export PATH="$HOME/bin:$HOME/.node_modules_global/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"

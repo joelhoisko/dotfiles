@@ -43,10 +43,10 @@ URxvt*cursorColor:  fg
 
 ! black
 URxvt*color0:       #073641
-URxvt*color8:       #002b36
+URxvt*color8:       #1e6d81
 
 ! red
-URxvt*color1:       #eb606b
+URxvt*color1:       #eb8860
 URxvt*color9:       #eb606b
 
 ! green
@@ -67,7 +67,7 @@ URxvt*color13:      #6c71c3
 
 ! cyan
 URxvt*color6:       #aeddff
-URxvt*color14:      #34434d
+URxvt*color14:      #5d788a
 
 ! white
 URxvt*color7:       #ffffff
