@@ -4,7 +4,6 @@ find
 find dotf
 search theme
 search icon
-delete
 
 open_with 
 open_with neovim
@@ -12,3 +11,4 @@ open_with vim
 open_with nvim
 open_q
 open_with q
+delete

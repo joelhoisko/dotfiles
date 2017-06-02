@@ -47,7 +47,8 @@ let g:deoplete#enable_at_startup=1
 " Set some autocomplete things
 autocmd CompleteDone * pclose " To close preview window
 let g:vim_markdown_folding_disabled = 1
-
+" For a bit slower updating on the markdown
+let g:markdown_composer_refresh_rate = 5000
 
 
 inoremap <silent><expr> <TAB>
