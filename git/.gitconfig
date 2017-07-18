@@ -1,0 +1,17 @@
+[user]
+	email = joel.hoisko@gmail.com
+	name = Joel Hoisko
+[http]
+	sslverify = false
+[core]
+	excludesfile = false
+[alias]
+	st = status
+    co = checkout
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'

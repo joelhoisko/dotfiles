@@ -1,7 +1,7 @@
 ! Define some colors
 #define bg #1e282c
 #define fg #c3c7d1
-#define alphabg [85]#1e282c
+#define alphabg [90]#1e282c
 #define rofibg argb:0fdf6e3
 
 ! ------------------------------------------------------

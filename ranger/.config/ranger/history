@@ -4,11 +4,16 @@ find
 find dotf
 search theme
 search icon
-
-open_with 
 open_with neovim
 open_with vim
-open_with nvim
 open_q
 open_with q
+show
 delete
+open_with 
+open_with zip
+open_with nvim
+mkdir UpdaterDirectory
+rename PyUpdaterApptar.gz
+rename PyUpdaterApp.tar.gz
+
