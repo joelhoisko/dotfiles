@@ -23,6 +23,7 @@ if dein#load_state('/home/joel/dotfiles/nvim/.config/nvim/plugin/')
   call dein#add('euclio/vim-markdown-composer')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('907th/vim-auto-save')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -50,6 +51,8 @@ autocmd CompleteDone * pclose " To close preview window
 let g:vim_markdown_folding_disabled = 1
 " For a bit slower updating on the markdown
 let g:markdown_composer_refresh_rate = 5000
+" Setup the autosaving
+let g:auto_save = 1  " enable AutoSave on Vim startup
 
 
 inoremap <silent><expr> <TAB>
