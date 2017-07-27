@@ -1,19 +1,18 @@
-
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/home/joel/dotfiles/nvim/.config/nvim/plugin//repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/joel/.local/share/dein//repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/joel/dotfiles/nvim/.config/nvim/plugin/')
-  call dein#begin('/home/joel/dotfiles/nvim/.config/nvim/plugin/')
+if dein#load_state('/home/joel/.local/share/dein/')
+  call dein#begin('/home/joel/.local/share/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/joel/dotfiles/nvim/.config/nvim/plugin//repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/joel/.local/share/dein//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -23,7 +22,8 @@ if dein#load_state('/home/joel/dotfiles/nvim/.config/nvim/plugin/')
   call dein#add('euclio/vim-markdown-composer')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('907th/vim-auto-save')
+  call dein#add('vim-syntastic/syntastic')
+  " call dein#add('hdima/python-syntax')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -32,6 +32,7 @@ if dein#load_state('/home/joel/dotfiles/nvim/.config/nvim/plugin/')
   call dein#end()
   call dein#save_state()
 endif
+
 
 " Required:
 filetype plugin indent on
@@ -48,13 +49,13 @@ endif
 let g:deoplete#enable_at_startup=1
 " Set some autocomplete things
 autocmd CompleteDone * pclose " To close preview window
+
+" Some Markdown Browser preview stuff
 let g:vim_markdown_folding_disabled = 1
 " For a bit slower updating on the markdown
 let g:markdown_composer_refresh_rate = 5000
-" Setup the autosaving
-let g:auto_save = 1  " enable AutoSave on Vim startup
 
-
+" For deoplete autocompletion with tab
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
@@ -64,12 +65,46 @@ let col = col('.') - 1
 return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
+" For toggling NERDTree easier
+map <C-n> :NERDTreeToggle<CR>
+" get rid of damn .pyc's
+let NERDTreeIgnore = ['\.pyc$']
+
+" Some Syntastic stuff
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" Some Syntastic checker
+let g:syntastic_python_checkers = ['python', 'pylint']
 
 " Joel's Vimrc
+"
+" More natural split directions
+set splitbelow
+set splitright
+
+" Autosaving 
+autocmd TextChanged,TextChangedI <buffer> silent write
+
+" no line wrapping on default
+set nowrap
+
+" Easier moving between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " The encoding displayed and the encoding written
 set encoding=utf-8
 set fileencoding=utf-8
+
+" for 256 colors
+set t_Co=256 
 
 " Use case insensitive search, except when using capital letters
 set ignorecase

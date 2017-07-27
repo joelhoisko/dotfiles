@@ -9,11 +9,16 @@ open_with vim
 open_q
 open_with q
 show
-delete
-open_with 
 open_with zip
 open_with nvim
 mkdir UpdaterDirectory
 rename PyUpdaterApptar.gz
 rename PyUpdaterApp.tar.gz
+delete
+open_with 
+rename webupd8team-ubuntu-atom-yakkety.list webup
+rename webupd8team-ubuntu-atom-zesty.list
+rename kelleyk-ubuntu-compton-zesty.list
 
+rename neovim-ppa-ubuntu-unstable-zesty.list
+rename kelleyk-ubuntu-compton-yakkety.list
