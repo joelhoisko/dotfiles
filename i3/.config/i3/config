@@ -15,7 +15,9 @@
 #exec_always --no-startup-id xrandr --output eDP1 --primary && sleep 0.15
 # start compton first and wait for it to get working
 exec --no-startup-id compton -b
-exec_always --no-startup-id xinput -set-prop "Logitech M705" "Device Accel Constant Deceleration" 2
+# note, use libinput xorg file rather
+#exec_always --no-startup-id xinput -set-prop "Logitech M705" "Device Accel Constant Deceleration" 2
+exec_always --no-startup-id xinput --set-prop "Logitech M705" "libinput Accel Speed" -0.6
 
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id dunst
@@ -34,7 +36,8 @@ set $mod Mod4
 
 # Custom application keybinds
 bindsym $mod+g exec --no-startup-id chromium-browser 
-bindsym $mod+p exec xrandr --output eDP-1-1 --auto --output HDMI-1-2 --auto --same-as eDP-1-1
+# I want p-key for something else
+# bindsym $mod+p exec xrandr --output eDP-1-1 --auto --output HDMI-1-2 --auto --same-as eDP-1-1
 # bindsym $mod+b exec /usr/bin/chromium-browser --profile-directory=Default --app-id=bgkodfmeijboinjdegggmkbkjfiagaan && /home/joel/Downloads/Telegram/Telegram -- %u
 # For changing between keyboard layouts
 bindsym $mod+Tab exec kb_toggle.sh
@@ -256,7 +259,8 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 # for easier reach
 bindsym $mod+z exec --no-startup-id amixer -D pulse sset Master 5%- unmute
 bindsym $mod+x exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
-
+# for play/pause
+bindsym $mod+p exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
 # Hovering over window doesn't take the focus
 focus_follows_mouse no

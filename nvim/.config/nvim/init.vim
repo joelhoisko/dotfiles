@@ -22,7 +22,9 @@ if dein#load_state('/home/joel/.local/share/dein/')
   call dein#add('euclio/vim-markdown-composer')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('vim-syntastic/syntastic')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  " call dein#add('vim-syntastic/syntastic')
   " call dein#add('hdima/python-syntax')
 
   " You can specify revision/branch/tag.
@@ -44,6 +46,8 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+
+" @joel's plugin config here
 
 " Start the autocomplete
 let g:deoplete#enable_at_startup=1
@@ -70,18 +74,36 @@ map <C-n> :NERDTreeToggle<CR>
 " get rid of damn .pyc's
 let NERDTreeIgnore = ['\.pyc$']
 
+" @joel commented out because they took mah beatuiful statusline
 " Some Syntastic stuff
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" Some Syntastic checker
-let g:syntastic_python_checkers = ['python', 'pylint']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"" Some Syntastic checker
+"let g:syntastic_python_checkers = ['python', 'pylint']
 
-" Joel's Vimrc
+" time for some fancy vim-airline
+let g:airline_powerline_fonts = 1
+" and some fancy themes
+let g:airline_theme='simple'
+" so that the fonts aren't all messed up
+"if !exists('g:airline_symbols')
+"  let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.space = "\ua0"
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
+
+" Joel's Vimrc -------------------------
 "
 " More natural split directions
 set splitbelow
@@ -89,6 +111,8 @@ set splitright
 
 " Autosaving 
 autocmd TextChanged,TextChangedI <buffer> silent write
+set autowriteall
+au BufLeave * silent! wall
 
 " no line wrapping on default
 set nowrap
@@ -134,3 +158,10 @@ command W w !sudo tee % > /dev/null
 "Always show current position
 set ruler
 
+" no beeperino
+set noerrorbells
+
+" show current mode
+set showmode
+" and partial command in status line
+set showcmd

@@ -2,7 +2,7 @@
 # Simple script for using multiple displays with the Dell D3100 Docking Station
 # after upgrading to 17.04, had to restart the displaylink service
 
-sudo systemctl restart display-manager.service
+#sudo systemctl restart display-manager.service
 
 xrandr --output eDP-1 --auto --primary 
 echo "Primary monitor eDP-1 set"

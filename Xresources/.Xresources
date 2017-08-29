@@ -30,11 +30,13 @@ URxvt.scrollBar:    false
 URxvt.cursorBlink:  true
 URxvt.cursorUnderline:  true
 URxvt.internalBorder:   20
+URxvt.saveLines:    1000
+URxvt.letterSpace: -1
 !
 !! URxvt font
 URxvt.allow_bold:   true
-URxvt*font:         xft:Source Code Pro:pixelsize=16
-URxvt*boldFont:     xft:Source Code Pro:bold:pixelsize=17
+URxvt*font:         xft:DejaVu Sans Mono for Powerline:pixelsize=15
+URxvt*boldFont:     xft:DejaVu Sans Mono for Powerline:bold:pixelsize=16
 !
 
 ! special
