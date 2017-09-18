@@ -1,0 +1,4 @@
+#! /bin/bash
+# just make me sleep
+sleep 1500; sudo systemctl suspend
+

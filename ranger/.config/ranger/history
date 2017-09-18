@@ -1,6 +1,5 @@
 find .con
 find do
-find 
 find dotf
 search theme
 search icon
@@ -22,5 +21,7 @@ rename kelleyk-ubuntu-compton-yakkety.list
 jqq
 search cu
 open_with 
-delete
 
+find nn
+find 
+delete

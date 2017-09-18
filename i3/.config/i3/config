@@ -18,6 +18,8 @@ exec --no-startup-id compton -b
 # note, use libinput xorg file rather
 #exec_always --no-startup-id xinput -set-prop "Logitech M705" "Device Accel Constant Deceleration" 2
 exec_always --no-startup-id xinput --set-prop "Logitech M705" "libinput Accel Speed" -0.6
+# set the trackpad to nice
+exec_alway synclient VertScrollDelta=77 PalmDetect=1 HorizTwoFingerScroll=1 HorizScrollDelta=-77
 
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id dunst
