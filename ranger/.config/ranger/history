@@ -20,8 +20,9 @@ rename neovim-ppa-ubuntu-unstable-zesty.list
 rename kelleyk-ubuntu-compton-yakkety.list
 jqq
 search cu
-open_with 
-
 find nn
 find 
+open_with 
+find wa
 delete
+

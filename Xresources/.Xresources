@@ -30,7 +30,7 @@ URxvt.scrollBar:    false
 URxvt.cursorBlink:  true
 URxvt.cursorUnderline:  true
 URxvt.internalBorder:   20
-URxvt.saveLines:    1000
+URxvt.saveLines:    3000
 URxvt.letterSpace: -1
 !
 !! URxvt font

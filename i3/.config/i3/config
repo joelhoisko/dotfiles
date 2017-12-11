@@ -15,11 +15,12 @@
 #exec_always --no-startup-id xrandr --output eDP1 --primary && sleep 0.15
 # start compton first and wait for it to get working
 exec --no-startup-id compton -b
+exec redshift-gtk
 # note, use libinput xorg file rather
 #exec_always --no-startup-id xinput -set-prop "Logitech M705" "Device Accel Constant Deceleration" 2
 exec_always --no-startup-id xinput --set-prop "Logitech M705" "libinput Accel Speed" -0.6
 # set the trackpad to nice
-exec_alway synclient VertScrollDelta=77 PalmDetect=1 HorizTwoFingerScroll=1 HorizScrollDelta=-77
+exec synclient VertScrollDelta=77 PalmDetect=1 HorizTwoFingerScroll=1 HorizScrollDelta=77
 
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id dunst
@@ -38,8 +39,7 @@ set $mod Mod4
 
 # Custom application keybinds
 bindsym $mod+g exec --no-startup-id chromium-browser 
-# I want p-key for something else
-# bindsym $mod+p exec xrandr --output eDP-1-1 --auto --output HDMI-1-2 --auto --same-as eDP-1-1
+# bindsym exec mirrormonitor
 # bindsym $mod+b exec /usr/bin/chromium-browser --profile-directory=Default --app-id=bgkodfmeijboinjdegggmkbkjfiagaan && /home/joel/Downloads/Telegram/Telegram -- %u
 # For changing between keyboard layouts
 bindsym $mod+Tab exec kb_toggle.sh
@@ -191,6 +191,7 @@ mode "resize" {
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -199,6 +200,9 @@ bindsym $mod+r mode "resize"
 set $text-color           #ebdbb2
 set $inactive-text-color  #665c54
 set $bg-color             #282828
+# this is the actual border color aka the border is just a background
+# used to be #6F2C56
+set $active-bg-color      #8A4671
 set $inactive-bg-color    #282828
 set $urgent-bg-color      #cc241d
 set $border               #689d6a
@@ -206,7 +210,7 @@ set $indicator            #8ec07c
 
 # Window colors
 #                        border             bg                 text                 indicator
-client.focused          $bg-color          $border            $text-color          $indicator
+client.focused          $bg-color          $active-bg-color   $text-color          $indicator
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $urgent-bg-color
