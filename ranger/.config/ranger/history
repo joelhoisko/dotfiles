@@ -24,5 +24,6 @@ find nn
 find 
 open_with 
 find wa
-delete
 
+mkdir Exercise2
+delete
