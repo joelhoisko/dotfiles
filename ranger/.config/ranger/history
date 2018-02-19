@@ -9,7 +9,6 @@ open_q
 open_with q
 show
 open_with zip
-open_with nvim
 mkdir UpdaterDirectory
 rename PyUpdaterApptar.gz
 rename PyUpdaterApp.tar.gz
@@ -27,3 +26,6 @@ find wa
 
 mkdir Exercise2
 delete
+`
+open_with
+open_with nvim
