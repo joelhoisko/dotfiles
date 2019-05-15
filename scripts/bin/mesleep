@@ -1,5 +1,6 @@
 #! /bin/bash
 # just make me sleep
 echo 'feeling sleepy'
-sleep 1500; echo 'mesleep now'; date '+%R'; sudo systemctl suspend
+date '+%R';
+sleep 3600; echo 'mesleep now';  sudo systemctl suspend
 

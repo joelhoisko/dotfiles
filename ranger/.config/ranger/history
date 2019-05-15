@@ -21,11 +21,12 @@ jqq
 search cu
 find nn
 find 
-open_with 
 find wa
-
 mkdir Exercise2
-delete
 `
 open_with
+open_with 
+delete
 open_with nvim
+
+open_with dpkg

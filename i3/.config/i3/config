@@ -24,8 +24,7 @@ exec synclient VertScrollDelta=77 PalmDetect=1 HorizTwoFingerScroll=1 HorizScrol
 
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id dunst
-exec --no-startup-id dropbox start
-exec shutter --min_at_startup
+#exec --no-startup-id dropbox start
 exec xrdb ~/.Xresources
 
 # Random background every time
@@ -43,6 +42,8 @@ bindsym $mod+g exec --no-startup-id chromium-browser
 # bindsym $mod+b exec /usr/bin/chromium-browser --profile-directory=Default --app-id=bgkodfmeijboinjdegggmkbkjfiagaan && /home/joel/Downloads/Telegram/Telegram -- %u
 # For changing between keyboard layouts
 bindsym $mod+Tab exec kb_toggle.sh
+# for easy screenshots
+bindsym Print exec flameshot gui -p ~/Pictures
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -206,7 +207,8 @@ set $active-bg-color      #8A4671
 set $inactive-bg-color    #282828
 set $urgent-bg-color      #cc241d
 set $border               #689d6a
-set $indicator            #8ec07c
+#set $indicator            #8ec07c
+set $indicator            #C79CB7
 
 # Window colors
 #                        border             bg                 text                 indicator
@@ -224,6 +226,10 @@ gaps inner 30
 gaps outer -10
 smart_gaps on
 smart_borders no_gaps
+# this is to potentially fix the popupwindow problem
+# check: https://youtrack.jetbrains.com/issue/IDEA-188824
+# commentg it out lets me focus to the windows again when i change workspaces
+# for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
 bindsym $mod+i gaps inner current plus 5
 bindsym $mod+Shift+i gaps inner current minus 5
@@ -266,7 +272,13 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 bindsym $mod+z exec --no-startup-id amixer -D pulse sset Master 5%- unmute
 bindsym $mod+x exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
 # for play/pause
-bindsym $mod+p exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+#bindsym $mod+p exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+p exec playerctl play-pause
+bindsym $mod+bracketleft exec playerctl previous
+bindsym $mod+bracketright exec playerctl next
+
+# dumb shit
+bindsym $mod+Shift+m exec urxvt -hold -e cmatrix; exec urxvt -hold -e pipes.sh;exec urxvt -hold -e htop;exec urxvt -hold -e top;
 
 # Hovering over window doesn't take the focus
 focus_follows_mouse no
