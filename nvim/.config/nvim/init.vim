@@ -168,3 +168,5 @@ set noerrorbells
 set showmode
 " and partial command in status line
 set showcmd
+" and clipboard more sense
+set clipboard+=unnamedplus

@@ -15,5 +15,6 @@ alias vaggetest='cd ~/Dev/Vagrant/vagrant-tehden-development && vagrant ssh -- -
 alias ll='ls -lAh'
 alias tasks='task list sort:project'
 alias wttr='curl wttr.in/Turku?lang=en'
-# vpn
 alias exp='expressvpn'
+alias bt='bluetoothctl'
+alias website='ssh root@51.15.134.113'
