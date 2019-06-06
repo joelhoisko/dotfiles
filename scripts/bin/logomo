@@ -1,0 +1,29 @@
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
+import requests
+import re
+from datetime import date
+from bs4 import BeautifulSoup
+from termcolor import cprint
+from pyfiglet import figlet_format
+
+page_link = 'https://logomokitchen.fi/lounas'
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+page_response = requests.get(page_link, headers=headers, timeout=5) 
+page_content = BeautifulSoup(page_response.content, 'html.parser')
+
+weekdays = ['maanantai', 'tiistai', 'keskiviikko', 'torstai', 'perjantai']
+vegan_list = []
+
+today_int = date.today().weekday() 
+# get todays tab, is always a single element in the list
+today_div = page_content.find_all(id=re.compile(weekdays[today_int]))[0]
+for string in today_div.stripped_strings:
+    # matches that the string stars with ( or , and ends with ) or ,
+    if re.search(r'(,|\()V(\)|,)', string):
+        # remove the stuff around parenthesis and the leading space
+        vegan_list.append(re.sub(r'\s+\([^()]*\)', '', string))
+
+# in case thers multiple vegan options
+food = '\nja\n'.join(vegan_list)
+cprint(figlet_format(food, font='doom'), 'green', attrs=['bold'])
