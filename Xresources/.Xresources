@@ -75,3 +75,4 @@ URxvt*boldFont:     xft:DejaVu Sans Mono for Powerline:bold:pixelsize=16
 ! white
 *.color7:       #cfd8dc
 *.color15:      #eceff1
+

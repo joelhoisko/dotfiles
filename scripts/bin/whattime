@@ -26,7 +26,7 @@ for i in range(len(p_list)):
 
 today_int = date.today().weekday()
 food = vegan_list[today_int]['food']
-if re.search(r'(puna"massama)?.tofu', food, re.IGNORECASE):
+if re.search(r'(puna|massama).+tofu', food, re.IGNORECASE):
     cprint(figlet_format('Thai\nin\nTown\nTIME', font='banner3-D'), 'green', attrs=['bold'])
 else:
     cprint(figlet_format('VG-WOK\nTIME', font='banner3-D'), 'green', attrs=['bold'])

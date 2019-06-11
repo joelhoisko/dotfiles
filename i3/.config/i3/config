@@ -23,7 +23,7 @@ exec_always --no-startup-id xinput --set-prop "Logitech M705" "libinput Accel Sp
 exec synclient VertScrollDelta=77 PalmDetect=1 HorizTwoFingerScroll=1 HorizScrollDelta=77
 
 exec --no-startup-id nm-applet
-#exec_always --no-startup-id dunst
+exec_always --no-startup-id dunst
 #exec --no-startup-id dropbox start
 exec xrdb ~/.Xresources
 

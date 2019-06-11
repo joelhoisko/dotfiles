@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#use ctl keys to move forward and back in words
+bind '"\eOC":forward-word'
+bind '"\eOD":backward-word'
+
 # Custom terminal prompt
 export PS1="\W \\$ \[$(tput sgr0)\]"
 
