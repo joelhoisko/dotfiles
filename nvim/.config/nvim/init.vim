@@ -170,3 +170,9 @@ set showmode
 set showcmd
 " and clipboard more sense
 set clipboard+=unnamedplus
+" stup indentation for html and css
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype css setlocal ts=2 sw=2 expandtab
+autocmd Filetype sass setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+" autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
