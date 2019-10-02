@@ -6,7 +6,6 @@ search icon
 open_with neovim
 open_with vim
 open_q
-open_with q
 show
 open_with zip
 mkdir UpdaterDirectory
@@ -26,9 +25,11 @@ mkdir Exercise2
 `
 open_with
 open_with 
-delete
-open_with nvim
-
 open_with dpkg
 ljq
 search pyu
+open_with q
+open_with nvim
+
+open_with dia
+delete

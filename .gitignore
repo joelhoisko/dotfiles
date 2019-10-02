@@ -1,3 +1,5 @@
 # First line or seomthing plsz
 
 nvim/.config/nvim/plugin/
+ranger/.config/ranger/
+!ranger/.config/ranger/rc.conf
