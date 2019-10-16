@@ -4,7 +4,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/joel/.local/share/dein//repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/joel/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('/home/joel/.local/share/dein/')
@@ -12,14 +12,14 @@ if dein#load_state('/home/joel/.local/share/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/joel/.local/share/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/joel/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('zchee/deoplete-jedi')
-  call dein#add('euclio/vim-markdown-composer')
+  call dein#add('euclio/vim-markdown-composer', {'build': 'cargo build --release'})
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
   call dein#add('vim-airline/vim-airline')
@@ -28,7 +28,7 @@ if dein#load_state('/home/joel/.local/share/dein/')
   " call dein#add('hdima/python-syntax')
 
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
   " Required:
   call dein#end()

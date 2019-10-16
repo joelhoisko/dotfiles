@@ -5,8 +5,9 @@
 	sslverify = false
 [core]
 	excludesfile = false
+	editor = nvim
 [alias]
-	st = status
+    st = status
     co = checkout
     cm = commit
     gud = commit -am
@@ -16,3 +17,6 @@
   prompt = true
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+# https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
+[includeIf "gitdir:~/Dolittle/"]
+    path = ~/Dolittle/.gitconfig
