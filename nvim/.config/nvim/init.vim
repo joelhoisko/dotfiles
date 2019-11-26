@@ -6,6 +6,8 @@ endif
 " Required:
 set runtimepath+=/home/joel/.local/share/dein/repos/github.com/Shougo/dein.vim
 
+
+
 " Required:
 if dein#load_state('/home/joel/.local/share/dein/')
   call dein#begin('/home/joel/.local/share/dein/')
@@ -24,6 +26,9 @@ if dein#load_state('/home/joel/.local/share/dein/')
   call dein#add('scrooloose/nerdtree')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+  " for plantuml stuff
+  " call dein#add('aklt/plantuml-syntax')
+  " call dein#add('tyru/open-browser.vim')
   " call dein#add('vim-syntastic/syntastic')
   " call dein#add('hdima/python-syntax')
 
@@ -48,6 +53,9 @@ endif
 "End dein Scripts-------------------------
 
 " @joel's plugin config here
+
+" this virtualenv has the neovim3 package already installed
+let g:python3_host_prog='/home/joel/Dev/neovim3/bin/python'
 
 " Start the autocomplete
 let g:deoplete#enable_at_startup=1
