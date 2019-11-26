@@ -1,5 +1,5 @@
 [global]
-    font = Inconsolata 11
+    font = Source Code Pro 13
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -9,7 +9,7 @@
     #
     # for a complete reference see http://developer.gnome.org/pango/stable/PangoMarkupFormat.html
     # If markup is not allowed, those tags will be stripped out of the message.
-    allow_markup = yes
+    markup = yes
 
     # The format of the message. Possible variables are:
     #   %a  appname
@@ -51,7 +51,7 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 52
-    icon_path = /usr/share/icons/Adwaita/16x16/status:/usr/share/icons/Adwaita/16x16/devices
+    icon_path = /usr/share/icons/Paper/16x16/status:/usr/share/icons/Paper/16x16/devices
 
 
     # the geometry of the window

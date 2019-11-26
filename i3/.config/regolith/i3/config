@@ -1,5 +1,4 @@
 # i3 config file (v4) for Regolith Desktop Environment
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # This defines which key super maps to on your keyboard.  
@@ -47,6 +46,7 @@ hide_edge_borders smart
 
 # start a terminal
 bindsym $mod+Return exec $terminal_path
+bindsym $mod+t exec $terminal_path -f "Source Code Pro:size=12"
 
 # start a web browser
 bindsym $mod+g exec /usr/bin/sensible-browser
@@ -63,9 +63,6 @@ bindsym $mod+d exec rofi -show drun -theme $rofiTheme
 
 # applications
 bindsym Print exec flameshot gui -p ~/Pictures
-
-# for caps2esc
-
 
 # change focus
 bindsym $mod+Left focus left
@@ -207,6 +204,7 @@ bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
 
 # lock the screen
 bindsym $mod+Escape exec gnome-screensaver-command --lock
+# bindsym $mod+Escape exec i3lock-fancy
 
 # put the system to sleep
 bindsym $mod+Shift+s exec systemctl suspend
@@ -319,7 +317,7 @@ set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.u
 set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
-set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
+set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 11"
 
 # Configure the bar
 bar {
@@ -327,8 +325,8 @@ bar {
   separator_symbol " "
   status_command i3xrocks -c $i3xrocks_config
   position top
-  tray_output DP2-2
-  tray_output primary
+  #tray_output DP2-2
+  #tray_output primary
   strip_workspace_numbers yes
 
   colors {
@@ -347,7 +345,7 @@ bar {
 # Run programs when i3 starts
 
 # Start the composite manager
-exec --no-startup-id compton -f --config $compton_config
+exec_always --no-startup-id compton -f --config $compton_config
 
 # Launch the shortcut Conky window on first login
 # exec --no-startup-id /usr/bin/regolith-ftue
@@ -358,7 +356,21 @@ exec --no-startup-id /usr/bin/unclutter -b
 # Refresh wallpaper on screen resolution change
 # exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
 
-exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/1920x1200/*
+# exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/1920x1200/*
+exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/BigReso/*
 
 # for changing kebingins
-exec setxkbmap -option caps:swapescape
+# exec_always setxkbmap -option caps:swapescape
+# for toggling caps and esc
+bindsym $mod+Ctrl+space exec --no-startup-id caps_toggle.sh
+
+# volume and music stuff
+bindsym $mod+z exec --no-startup-id amixer -D pulse sset Master 5%- unmute
+bindsym $mod+x exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
+bindsym $mod+p exec playerctl play-pause
+bindsym $mod+bracketleft exec playerctl previous
+bindsym $mod+bracketright exec playerctl next
+
+# exec xautolock -time 10 -detectsleep -locker i3lock-fancy
+#exec_always killall dunst
+exec_always --no-startup-id dunst
