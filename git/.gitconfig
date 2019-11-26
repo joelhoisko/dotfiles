@@ -18,5 +18,5 @@
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 # https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
-[includeIf "gitdir:~/Dolittle/"]
+[includeIf "gitdir:~/Dolittle/ProsjektLiv"]
     path = ~/Dolittle/.gitconfig
