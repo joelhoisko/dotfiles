@@ -1,0 +1,27 @@
+# for easy updating/upgrading
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias update='sudo apt update'
+alias install='sudo apt install'
+alias asd='mesleep'
+alias i3conf='cd ~/dotfiles && nvim i3/.config/regolith/i3/config'
+alias pipes.sh='pipes.sh -R -r 0 -s 6 -p 15 -f 100'
+alias ll='ls -lAh'
+alias tasks='task list sort:project'
+alias wttr='curl wttr.in/'
+alias exp='expressvpn'
+alias bt='bluetoothctl'
+alias website='ssh root@51.15.134.113'
+alias mongotime='docker kill $(docker ps -q --filter ancestor=mongo:4.0.12); docker run -d -p 27017:27017 mongo:4.0.12'
+alias aksio='cd ~/Dolittle/ProsjektLiv/Source/Pricing/'
+alias aksiodot='cd ~/Dolittle/ProsjektLiv/Source/Pricing/Core && dotnet watch run'
+alias aksioweb='cd ~/Dolittle/ProsjektLiv/Source/Pricing/Web && yarn watch'
+alias aksiotime='cd ~/Dolittle/ProsjektLiv/Source/Pricing/local_development/ && mongotime && docker-compose up -d'
+alias getbankid='echo "Olsen Svein"; echo "02114626336" | xclip -sel c;'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias dolit="cd ~/Dolittle"
+alias docli="cd ~/Dolittle/dolittle-edge/Studio/Source/Tooling/Plugin && npm run publish-locally && cd ~/Dolittle/dolittle-platform/Studio/Source/Tooling/Plugin/ && npm run publish-locally"
+
