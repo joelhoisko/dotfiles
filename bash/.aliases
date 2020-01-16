@@ -25,3 +25,5 @@ alias ......="cd ../../../../.."
 alias dolit="cd ~/Dolittle"
 alias docli="cd ~/Dolittle/dolittle-edge/Studio/Source/Tooling/Plugin && npm run publish-locally && cd ~/Dolittle/dolittle-platform/Studio/Source/Tooling/Plugin/ && npm run publish-locally"
 
+alias doedge="dolit && cd dolittle-edge/Studio"
+alias doplat="dolit && cd dolittle-platform/Studio"

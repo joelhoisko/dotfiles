@@ -14,6 +14,7 @@ set $i3xrocks_config /home/joel/.config/regolith/i3xrocks/config
 #set $compton_config /etc/regolith/compton/config
 set $compton_config /home/joel/.config/regolith/compton/config
 
+
 # path to terminal. Override this to specify a custom terminal.
 set $terminal_path /usr/bin/st
 
@@ -47,6 +48,8 @@ hide_edge_borders smart
 # start a terminal
 bindsym $mod+Return exec $terminal_path
 bindsym $mod+t exec $terminal_path -f "Source Code Pro:size=12"
+# for bib presentation
+bindsym $mod+Shift+t exec $terminal_path -f "Source Code Pro:size=20"
 
 # start a web browser
 bindsym $mod+g exec /usr/bin/sensible-browser
@@ -347,6 +350,9 @@ bar {
 # Start the composite manager
 exec_always --no-startup-id compton -f --config $compton_config
 
+# startup dunst
+exec --no-startup-id dunst
+
 # Launch the shortcut Conky window on first login
 # exec --no-startup-id /usr/bin/regolith-ftue
 
@@ -355,8 +361,9 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Refresh wallpaper on screen resolution change
 # exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
+exec --no-startup-id /usr/bin/xeventbind resolution feh --randomize --bg-fill ~/Dropbox/Wallsuffle/BigReso/*
 
-# exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/1920x1200/*
+# refresh wallpaper on i3 restart
 exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/BigReso/*
 
 # for changing kebingins
@@ -372,5 +379,3 @@ bindsym $mod+bracketleft exec playerctl previous
 bindsym $mod+bracketright exec playerctl next
 
 # exec xautolock -time 10 -detectsleep -locker i3lock-fancy
-#exec_always killall dunst
-exec_always --no-startup-id dunst

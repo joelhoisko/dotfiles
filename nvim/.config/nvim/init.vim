@@ -66,6 +66,9 @@ autocmd CompleteDone * pclose " To close preview window
 let g:vim_markdown_folding_disabled = 1
 " For a bit slower updating on the markdown
 let g:markdown_composer_refresh_rate = 5000
+" lets not autostarthte composer, instead use the command :ComposerStart
+let g:markdown_composer_autostart = 0
+
 " For a bit better markdown render
 " acutally no: https://github.com/jgm/pandoc/issues/3051
 " let g:markdown_composer_external_renderer='pandoc -f gfm -t html'
