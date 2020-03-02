@@ -46,7 +46,7 @@ floating_modifier $mod
 hide_edge_borders smart
 
 # start a terminal
-bindsym $mod+Return exec $terminal_path
+bindsym $mod+Return exec --no-startup-id $terminal_path
 bindsym $mod+t exec $terminal_path -f "Source Code Pro:size=12"
 # for bib presentation
 bindsym $mod+Shift+t exec $terminal_path -f "Source Code Pro:size=20"
@@ -65,7 +65,10 @@ bindsym $mod+d exec rofi -show drun -theme $rofiTheme
 #bindsym $mod+Ctrl+space exec rofi -show window -theme $rofiTheme
 
 # applications
-bindsym Print exec flameshot gui -p ~/Pictures
+bindsym Print exec flameshot gui -p /home/joel/Pictures/screenshots/
+# it dont work liek it be
+# bindsym Print+Shift exec peek
+
 
 # change focus
 bindsym $mod+Left focus left

@@ -7,7 +7,6 @@ endif
 set runtimepath+=/home/joel/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 
-
 " Required:
 if dein#load_state('/home/joel/.local/share/dein/')
   call dein#begin('/home/joel/.local/share/dein/')
@@ -26,14 +25,11 @@ if dein#load_state('/home/joel/.local/share/dein/')
   call dein#add('scrooloose/nerdtree')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-  " for plantuml stuff
-  " call dein#add('aklt/plantuml-syntax')
-  " call dein#add('tyru/open-browser.vim')
-  " call dein#add('vim-syntastic/syntastic')
-  " call dein#add('hdima/python-syntax')
-
+  call dein#add('leafgarland/typescript-vim')
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  " call dein#add('Shougo/denite.nvim')
 
   " Required:
   call dein#end()
@@ -123,10 +119,12 @@ let g:airline_theme='simple'
 set splitbelow
 set splitright
 
-" Autosaving 
-autocmd TextChanged,TextChangedI <buffer> silent write
-set autowriteall
-au BufLeave * silent! wall
+" Autosave
+" autocmd TextChanged,TextChangedI <buffer> silent write
+" set autowriteall
+" au BufLeave * silent! wall
+" make save on focus lost only
+:au FocusLost * silent! wa
 
 " no line wrapping on default
 set nowrap
@@ -187,3 +185,4 @@ autocmd Filetype css setlocal ts=2 sw=2 expandtab
 autocmd Filetype sass setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 " autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+

@@ -8,7 +8,7 @@ export ZSH="/home/joel/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="joel"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,6 +110,8 @@ source "$HOME/Dolittle/Development/.bashrc"
 #export PATH="$HOME/Dev/android-studio/bin:$PATH"
 # fuck telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+# docfx
+export PATH="$HOME/Dev/docfx:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -126,3 +128,4 @@ zstyle ':completion:*' special-dirs false
 
 # Case insensitive
 # $zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
