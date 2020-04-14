@@ -12,8 +12,7 @@ set $i3xrocks_config /home/joel/.config/regolith/i3xrocks/config
 
 # compton config file
 #set $compton_config /etc/regolith/compton/config
-set $compton_config /home/joel/.config/regolith/compton/config
-
+set $compton_config /home/joel/.config/regolith/compton/config 
 
 # path to terminal. Override this to specify a custom terminal.
 set $terminal_path /usr/bin/st
@@ -209,7 +208,10 @@ bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
 # bindsym $mod+Shift+p exec /usr/bin/gnome-session-quit --power-off
 
 # lock the screen
-bindsym $mod+Escape exec gnome-screensaver-command --lock
+# uninstalled this gota get taht smexy appletv vids
+#bindsym $mod+Escape exec gnome-screensaver-command -lock
+bindsym $mod+Escape exec xscreensaver-command -lock
+bindsym $mod+Shift+Escape exec xscreensaver-command -activate
 # bindsym $mod+Escape exec i3lock-fancy
 
 # put the system to sleep
@@ -377,8 +379,15 @@ bindsym $mod+Ctrl+space exec --no-startup-id caps_toggle.sh
 # volume and music stuff
 bindsym $mod+z exec --no-startup-id amixer -D pulse sset Master 5%- unmute
 bindsym $mod+x exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
-bindsym $mod+p exec playerctl play-pause
-bindsym $mod+bracketleft exec playerctl previous
-bindsym $mod+bracketright exec playerctl next
+bindsym $mod+p exec --no-startup-id playerctl play-pause
+bindsym $mod+bracketleft exec --no-startup-id playerctl previous
+bindsym $mod+bracketright exec --no-startup-id playerctl next
 
 # exec xautolock -time 10 -detectsleep -locker i3lock-fancy
+# dont letx xsaver take over if video be playing
+# exec_always --no-startup-id ~/Dev/lightsonplus/lightson+ -d &
+
+# make microsoft teams windows float
+for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
+

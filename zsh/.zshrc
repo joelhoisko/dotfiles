@@ -112,6 +112,8 @@ source "$HOME/Dolittle/Development/.bashrc"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # docfx
 export PATH="$HOME/Dev/docfx:$PATH"
+# pip3 install --user stuff
+export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
