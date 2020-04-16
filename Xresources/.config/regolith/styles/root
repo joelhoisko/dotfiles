@@ -6,12 +6,10 @@
 !#include "/etc/regolith/styles/color-solarized-dark"
 !#include "/etc/regolith/styles/color-solarized-light"
 !#include "/etc/regolith/styles/color-gruvbox"
-! this was the original one
-!#include "/etc/regolith/styles/color-nord"
+#include "/etc/regolith/styles/color-nord"
 !#include "/etc/regolith/styles/color-ayu"
 !#include "/etc/regolith/styles/color-ayu-dark"
-! trying this shit out
-#include "/etc/regolith/styles/color-ayu-mirage"
+!#include "/etc/regolith/styles/color-ayu-mirage"
 
 ! -- Styles - Fonts
 ! NOTE: Font packages may need to be installed when enabling typefaces.
@@ -30,8 +28,7 @@
 !#include "/etc/regolith/styles/theme-ubuntu-dark"
 !
 ! The following theme requires nordic and paper-icon-theme to be installed
-! used to be this
-!#include "/etc/regolith/styles/theme-nordic"
+#include "/etc/regolith/styles/theme-nordic"
 
 ! The following theme requires Ayu and Arc-icon-theme to be installed
 ! (https://github.com/appelgriebsch/ayu-theme/releases/tag/ayu-0.1.0)
@@ -43,8 +40,7 @@
 
 ! The following theme requires Ayu-Mirage and Arc-icon-theme to be installed
 ! (https://github.com/appelgriebsch/ayu-theme/releases/tag/ayu-mirage-0.1.0)
-! time for something interest
-#include "/etc/regolith/styles/theme-ayu-mirage"
+!#include "/etc/regolith/styles/theme-ayu-mirage"
 
 ! -- Applications
 ! These files map values defined above into specific app settings.
@@ -54,4 +50,3 @@
 #include "/etc/regolith/styles/rofi"
 #include "/etc/regolith/styles/gnome"
 
-!Xft.dpi: 133
