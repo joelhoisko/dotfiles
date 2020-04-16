@@ -391,3 +391,7 @@ bindsym $mod+bracketright exec --no-startup-id playerctl next
 for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 
+# make window title text bigger and bettah
+# https://www.reddit.com/r/i3wm/comments/5s8ol3/cannot_change_the_font_size_of_window_titles/
+for_window [class=".*"] title_format "<span font='Source Code Pro Medium 12'> %title</span>"
+font pango:Source Code Pro Medium 12

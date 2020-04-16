@@ -3,55 +3,55 @@
 ! -- Styles - Colors
 !
 ! Uncomment one and only one of the following color definitions: 
-!#include "/etc/regolith/styles/color-solarized-dark"
-!#include "/etc/regolith/styles/color-solarized-light"
-!#include "/etc/regolith/styles/color-gruvbox"
+!#include "/home/joel/.config/regolith/styles/color-solarized-dark"
+!#include "/home/joel/.config/regolith/styles/color-solarized-light"
+!#include "/home/joel/.config/regolith/styles/color-gruvbox"
 ! this was the original one
-!#include "/etc/regolith/styles/color-nord"
-!#include "/etc/regolith/styles/color-ayu"
-!#include "/etc/regolith/styles/color-ayu-dark"
+!#include "/home/joel/.config/regolith/styles/color-nord"
+!#include "/home/joel/.config/regolith/styles/color-ayu"
+!#include "/home/joel/.config/regolith/styles/color-ayu-dark"
 ! trying this shit out
-#include "/etc/regolith/styles/color-ayu-mirage"
+#include "/home/joel/.config/regolith/styles/color-ayu-mirage"
 
 ! -- Styles - Fonts
 ! NOTE: Font packages may need to be installed when enabling typefaces.
 ! Uncomment one and only one of the following font definitions:
-#include "/etc/regolith/styles/typeface-sourcecodepro"
-!#include "/etc/regolith/styles/typeface-ubuntu"
+#include "/home/joel/.config/regolith/styles/typeface-sourcecodepro"
+!#include "/home/joel/.config/regolith/styles/typeface-ubuntu"
 
 ! -- Styles - Theme
 ! NOTE: GTK theme and icon packages may need to be installed when enabling themes.
 ! Uncomment one and only one of the following theme definitions:
 !
 ! The following theme requires solarc-theme and arc-icon-theme to be installed.
-!#include "/etc/regolith/styles/theme-regolith"
+!#include "/home/joel/.config/regolith/styles/theme-regolith"
 !
 ! The following theme requires gnome-themes-extra-data and adwaita-icon-theme to be installed.
-!#include "/etc/regolith/styles/theme-ubuntu-dark"
+!#include "/home/joel/.config/regolith/styles/theme-ubuntu-dark"
 !
 ! The following theme requires nordic and paper-icon-theme to be installed
 ! used to be this
-!#include "/etc/regolith/styles/theme-nordic"
+!#include "/home/joel/.config/regolith/styles/theme-nordic"
 
 ! The following theme requires Ayu and Arc-icon-theme to be installed
 ! (https://github.com/appelgriebsch/ayu-theme/releases/tag/ayu-0.1.0)
-!#include "/etc/regolith/styles/theme-ayu"
+!#include "/home/joel/.config/regolith/styles/theme-ayu"
 
 ! The following theme requires Ayu and Arc-icon-theme to be installed
 ! (https://github.com/appelgriebsch/ayu-theme/releases/tag/ayu-0.1.0)
-!#include "/etc/regolith/styles/theme-ayu-dark"
+!#include "/home/joel/.config/regolith/styles/theme-ayu-dark"
 
 ! The following theme requires Ayu-Mirage and Arc-icon-theme to be installed
 ! (https://github.com/appelgriebsch/ayu-theme/releases/tag/ayu-mirage-0.1.0)
 ! time for something interest
-#include "/etc/regolith/styles/theme-ayu-mirage"
+#include "/home/joel/.config/regolith/styles/theme-ayu-mirage"
 
 ! -- Applications
 ! These files map values defined above into specific app settings.
-#include "/etc/regolith/styles/st-term"
-#include "/etc/regolith/styles/i3-wm"
-#include "/etc/regolith/styles/i3xrocks"
-#include "/etc/regolith/styles/rofi"
-#include "/etc/regolith/styles/gnome"
+#include "/home/joel/.config/regolith/styles/st-term"
+#include "/home/joel/.config/regolith/styles/i3-wm"
+#include "/home/joel/.config/regolith/styles/i3xrocks"
+#include "/home/joel/.config/regolith/styles/rofi"
+#include "/home/joel/.config/regolith/styles/gnome"
 
 !Xft.dpi: 133
