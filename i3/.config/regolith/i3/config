@@ -379,9 +379,9 @@ bindsym $mod+Ctrl+space exec --no-startup-id caps_toggle.sh
 # volume and music stuff
 bindsym $mod+z exec --no-startup-id amixer -D pulse sset Master 5%- unmute
 bindsym $mod+x exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
-bindsym $mod+p exec --no-startup-id playerctl play-pause
-bindsym $mod+bracketleft exec --no-startup-id playerctl previous
-bindsym $mod+bracketright exec --no-startup-id playerctl next
+bindsym $mod+p exec --no-startup-id playerctl -p spotify play-pause
+bindsym $mod+bracketleft exec --no-startup-id playerctl -p spotify previous
+bindsym $mod+bracketright exec --no-startup-id playerctl -p spotify next
 
 # exec xautolock -time 10 -detectsleep -locker i3lock-fancy
 # dont letx xsaver take over if video be playing

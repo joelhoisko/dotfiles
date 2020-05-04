@@ -1,0 +1,15 @@
+#/bin/sh
+
+echo "killing mongo"
+docker kill $(docker ps -q --filter ancestor=dolittle/mongodb)
+echo "starting mongo"
+docker run -d -p 27017:27017 dolittle/mongodb
+# your terminal of choice, mine is 'st'
+st zsh -c 'cd ~/Dolittle/SindreExample/Archive/Head1/; zsh' &
+st zsh -c 'cd ~/Dolittle/SindreExample/Archive/Head2/; zsh' &
+st zsh -c 'cd ~/Dolittle/SindreExample/Archive/Head3/; zsh' &
+
+st zsh -c 'cd ~/Dolittle/SindreExample/Archive/Runtime1/; zsh' &
+st zsh -c 'cd ~/Dolittle/SindreExample/Archive/Runtime2/; zsh' &
+st zsh -c 'cd ~/Dolittle/SindreExample/Archive/Runtime3/; zsh' &
+
