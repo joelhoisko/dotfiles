@@ -50,6 +50,10 @@ bindsym $mod+t exec $terminal_path -f "Source Code Pro:size=12"
 # for bib presentation
 bindsym $mod+Shift+t exec $terminal_path -f "Source Code Pro:size=20"
 
+# parent/child handling
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
 # start a web browser
 bindsym $mod+g exec /usr/bin/sensible-browser
 
