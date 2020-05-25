@@ -394,6 +394,8 @@ bindsym $mod+bracketright exec --no-startup-id playerctl -p spotify next
 # make microsoft teams windows float
 for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
+# bindsym $mod+Ctrl+t [title="Microsoft Teams Notification" class="microsoft teams - preview"] kill
+bindsym $mod+Ctrl+t [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] kill
 
 # make window title text bigger and bettah
 # https://www.reddit.com/r/i3wm/comments/5s8ol3/cannot_change_the_font_size_of_window_titles/

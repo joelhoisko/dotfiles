@@ -21,3 +21,5 @@
 # https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
 [includeIf "gitdir:~/Dolittle/ProsjektLiv"]
     path = ~/Dolittle/.gitconfig
+[pager]
+	branch = false
