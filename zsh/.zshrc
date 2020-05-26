@@ -8,7 +8,8 @@ export ZSH="/home/joel/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="joel"
+#ZSH_THEME="joel"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -114,6 +115,10 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export PATH="$HOME/Dev/docfx:$PATH"
 # pip3 install --user stuff
 export PATH="$HOME/.local/bin:$PATH"
+# pyen3 stuff
+export PATH="/home/joel/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
