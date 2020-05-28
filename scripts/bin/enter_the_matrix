@@ -4,12 +4,12 @@ echo "killing mongo"
 docker kill $(docker ps -q --filter ancestor=dolittle/mongodb)
 echo "starting mongo"
 docker run -d -p 27017:27017 dolittle/mongodb
-# your terminal of choice, mine is 'st'
-st zsh -c 'cd ~/Dolittle/dolittle-entropy/EventHorizonTest/Head1/; zsh' &
-st zsh -c 'cd ~/Dolittle/dolittle-entropy/EventHorizonTest/Head2/; zsh' &
-st zsh -c 'cd ~/Dolittle/dolittle-entropy/EventHorizonTest/Head3/; zsh' &
+echo "entering the matrix"
+gnome-terminal -- zsh -c 'cd ~/Dolittle/entropy/EventHorizonTest/Head1/; zsh' &
+gnome-terminal -- zsh -c 'cd ~/Dolittle/entropy/EventHorizonTest/Head2/; zsh' &
+gnome-terminal -- zsh -c 'cd ~/Dolittle/entropy/EventHorizonTest/Head3/; zsh' &
 
-st zsh -c 'cd ~/Dolittle/dolittle-entropy/EventHorizonTest/Runtime1/; zsh' &
-st zsh -c 'cd ~/Dolittle/dolittle-entropy/EventHorizonTest/Runtime2/; zsh' &
-st zsh -c 'cd ~/Dolittle/dolittle-entropy/EventHorizonTest/Runtime3/; zsh' &
+gnome-terminal -- zsh -c 'cd ~/Dolittle/entropy/EventHorizonTest/Runtime1/; zsh' &
+gnome-terminal -- zsh -c 'cd ~/Dolittle/entropy/EventHorizonTest/Runtime2/; zsh' &
+gnome-terminal -- zsh -c 'cd ~/Dolittle/entropy/EventHorizonTest/Runtime3/; zsh' &
 
