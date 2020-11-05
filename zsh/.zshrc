@@ -136,3 +136,7 @@ zstyle ':completion:*' special-dirs false
 # Case insensitive
 # $zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# kubectl autocompletion
+source <(kubectl completion zsh)

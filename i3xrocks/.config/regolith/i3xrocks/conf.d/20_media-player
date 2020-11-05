@@ -3,4 +3,4 @@
 # Displays media controls
 [media-player]
 interval=5
-instance=spotify
+

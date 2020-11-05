@@ -8,26 +8,24 @@ alias pipes.sh='pipes.sh -R -r 0 -s 6 -p 15 -f 100'
 alias ll='ls -lAh'
 alias tasks='task list sort:project'
 alias wttr='curl wttr.in/'
-alias exp='expressvpn'
 alias bt='bluetoothctl'
 alias website='ssh root@51.15.134.113'
 alias mongotime='echo "killing mongo"; docker kill $(docker ps -q --filter ancestor=dolittle/mongodb); echo "starting mongo"; docker run -d -p 27017:27017 dolittle/mongodb'
 # alias runtime='echo "killing runtime"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:5.0.0-alpha.4); echo "starting runtime"; docker run -p 50052:50052 -p 50053:50053 dolittle/runtime:5.0.0-alpha.4'
 # alias dotime='cd ~/bin/; docker-compose up;'
-alias aksio='cd ~/Dolittle/ProsjektLiv/Source/Pricing/'
-alias aksiodot='cd ~/Dolittle/ProsjektLiv/Source/Pricing/Core && dotnet watch run'
-alias aksioweb='cd ~/Dolittle/ProsjektLiv/Source/Pricing/Web && yarn watch'
-alias aksiotime='cd ~/Dolittle/ProsjektLiv/Source/Pricing/local_development/ && mongotime && docker-compose up -d'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
-alias dolit="cd ~/Dolittle/"
-alias docli="cd ~/Dolittle/dolittle-edge/Studio/Source/Tooling/Plugin && npm run publish-locally && cd ~/Dolittle/dolittle-platform/Studio/Source/Tooling/Plugin/ && npm run publish-locally"
 
-alias doedge="dolit && cd dolittle-edge/Studio"
-alias doplat="dolit && cd dolittle-platform/Studio"
 alias dodoc="dolittle-documentation-server"
 alias nuget="mono /usr/local/bin/nuget.exe"
+alias dockup="docker-compose up"
+alias dockdown="docker-compose down"
+alias doru="dotnet run"
+alias dobu="dotnet build"
+alias dore="dotnet restore"
+alias dote="dotnet test"
+alias dotime='echo "Killing dolittle/runtime:latest-development"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:latest-development); echo "starting runtime and mongo"; docker run -p 50053:50053 -p 27017:27017 dolittle/runtime:latest-development'
 

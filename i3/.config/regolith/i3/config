@@ -215,9 +215,10 @@ bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
 
 # lock the screen
 # uninstalled this gota get taht smexy appletv vids
-#bindsym $mod+Escape exec gnome-screensaver-command -lock
-bindsym $mod+Escape exec xscreensaver-command -lock
-bindsym $mod+Shift+Escape exec xscreensaver-command -activate
+# bindsym $mod+Escape exec gnome-screensaver-command -lock
+# bindsym $mod+Escape exec xscreensaver-command -lock
+bindsym $mod+Escape exec i3lock-fancy -- scrot -z
+# bindsym $mod+Shift+Escape exec xscreensaver-command -activate
 # bindsym $mod+Escape exec i3lock-fancy
 
 # put the system to sleep
@@ -409,12 +410,12 @@ bindsym $mod+bracketright exec --no-startup-id playerctl -p spotify next
 # exec xautolock -time 10 -detectsleep -locker i3lock-fancy
 # dont letx xsaver take over if video be playing
 # exec_always --no-startup-id ~/Dev/lightsonplus/lightson+ -d &
-
+#
 # make microsoft teams windows float
 for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 # bindsym $mod+Ctrl+t [title="Microsoft Teams Notification" class="microsoft teams - preview"] kill
-bindsym $mod+Ctrl+t [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] kill
+# bindsym $mod+Ctrl+t [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] kill
 
 # make window title text bigger and bettah
 # https://www.reddit.com/r/i3wm/comments/5s8ol3/cannot_change_the_font_size_of_window_titles/

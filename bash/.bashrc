@@ -144,4 +144,4 @@ PATH_TO_NPM_COMPLETION="/home/joel/.nvm/versions/node/v12.11.1/lib/node_modules/
 source $PATH_TO_NPM_COMPLETION/npm-completion.sh
 # seems to fix dotnet build/restore shit
 # https://github.com/dotnet/cli/issues/11560#issuecomment-515262657
-export MSBUILDDISABLENODEREUSE=1
+# export MSBUILDDISABLENODEREUSE=1
