@@ -8,3 +8,4 @@ else
     setxkbmap -option caps:swapescape
     notify-send --icon=preferences-desktop-keyboard "Swapped Caps/Esc"
 fi
+

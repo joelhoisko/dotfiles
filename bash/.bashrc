@@ -145,3 +145,6 @@ source $PATH_TO_NPM_COMPLETION/npm-completion.sh
 # seems to fix dotnet build/restore shit
 # https://github.com/dotnet/cli/issues/11560#issuecomment-515262657
 # export MSBUILDDISABLENODEREUSE=1
+
+# go path
+export PATH=$PATH:/usr/local/go/bin
