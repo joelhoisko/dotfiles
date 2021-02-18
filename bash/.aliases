@@ -29,4 +29,5 @@ alias dore="dotnet restore"
 alias dote="dotnet test"
 alias dotime='echo "Killing dolittle/runtime:latest-development"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:latest-development); echo "starting runtime and mongo"; docker run -p 50053:50053 -p 27017:27017 dolittle/runtime:latest-development'
 alias az-refresh="az aks get-credentials -g Infrastructure-Essential -n Cluster-Production-Two --subscription 49a62f35-8ede-4470-982a-593b89874dec"
+alias az-cluster-refresh="az aks get-credentials --resource-group Infrastructure-Essential --name Cluster-Production-Three --admin"
 

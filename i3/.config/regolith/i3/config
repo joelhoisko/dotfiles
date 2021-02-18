@@ -59,6 +59,7 @@ bindsym $mod+Shift+a focus child
 
 # start a web browser
 bindsym $mod+g exec /usr/bin/sensible-browser
+bindsym $mod+Shift+g exec google-chrome --incognito
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -200,7 +201,9 @@ bindsym $mod+b move workspace to output left
 bindsym $mod+n move workspace to output right
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# actually just amke it opoen vscode
+# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec code
 
 # restart regolith stuff
 bindsym $mod+Shift+r exec regolith-look refresh

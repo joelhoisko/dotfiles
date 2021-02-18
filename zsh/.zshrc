@@ -143,3 +143,22 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # kubectl autocompletion
 source <(kubectl completion zsh)
+# minikube completion
+source <(minikube completion zsh)
+# dolittle operatinos stuff
+export PATH="$PATH:$HOME/Dolittle/Operations/Scripts/bash"
+# kube-ps1
+source $HOME/Dev/kube-ps1/kube-ps1.sh
+PROMPT=$PROMPT'$(kube_ps1) '
+# disable the symbol
+KUBE_PS1_SYMBOL_ENABLE=false
+
+# for fixing nested rangers
+# https://wiki.archlinux.org/index.php/ranger#Preventing_nested_ranger_instances
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        /usr/bin/ranger "$@"
+    else
+        exit
+    fi
+}
