@@ -116,9 +116,13 @@ export PATH="$HOME/Dev/docfx:$PATH"
 # pip3 install --user stuff
 export PATH="$HOME/.local/bin:$PATH"
 # pyen3 stuff
-export PATH="/home/joel/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 # go stuff
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
@@ -127,7 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
- # added for npm-completion https://github.com/Jephuff/npm-bash-completion
+# added for npm-completion https://github.com/Jephuff/npm-bash-completion
 # PATH_TO_NPM_COMPLETION="/home/joel/.nvm/versions/node/v12.11.1/lib/node_modules/npm-completion"
 # source $PATH_TO_NPM_COMPLETION/npm-completion.sh
 
@@ -149,9 +153,10 @@ source <(minikube completion zsh)
 export PATH="$PATH:$HOME/Dolittle/Operations/Scripts/bash"
 # kube-ps1
 source $HOME/Dev/kube-ps1/kube-ps1.sh
-PROMPT=$PROMPT'$(kube_ps1) '
+PROMPT='$(kube_ps1)'$PROMPT
 # disable the symbol
 KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_NS_ENABLE=false
 
 # for fixing nested rangers
 # https://wiki.archlinux.org/index.php/ranger#Preventing_nested_ranger_instances
@@ -162,3 +167,8 @@ ranger() {
         exit
     fi
 }
+
+# for Ruby Gems support
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+

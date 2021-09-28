@@ -2,3 +2,4 @@
 i3-wm.bar.position: top
 i3-wm.bar.trayoutput: DP-2-1
 i3xrocks.media-player.player-args: -p spotify
+i3xrocks.weather.location: Oslo

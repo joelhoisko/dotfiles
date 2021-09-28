@@ -9,10 +9,12 @@
 [alias]
     st = status
     co = checkout
+    sw = switch
     cm = commit
     gud = commit -am
     br = branch
     cleanup = !git remote prune origin && git branch --merged | egrep -v '(^\\*|master|main)' | xargs git branch -d
+	graph = log --pretty=format:'%s %Cgreen%an %C(bold blue)(%ar) %Cred%h%Creset' --graph
 [merge]
   tool = vimdiff
 [mergetool]
@@ -20,7 +22,7 @@
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 # https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
-[includeIf "gitdir:~/Dolittle/ProsjektLiv"]
-    path = ~/Dolittle/.gitconfig
 [pager]
 	branch = false
+[pull]
+	rebase = false

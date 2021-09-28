@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+STATUS=$(pactl list sources | grep -A 5 "Description: USB Audio Microphone" | tail -n 1 | cut -d : -f 2 | xargs)
+
+if [ "$STATUS" == "yes" ]; then
+    echo "MUTED 🎤"
+else
+    echo ""
+fi
+

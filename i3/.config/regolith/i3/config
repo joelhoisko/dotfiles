@@ -203,7 +203,7 @@ bindsym $mod+n move workspace to output right
 # reload the configuration file
 # actually just amke it opoen vscode
 # bindsym $mod+Shift+c reload
-bindsym $mod+Shift+c exec code
+bindsym $mod+Shift+c exec --no-startup-id code
 
 # restart regolith stuff
 bindsym $mod+Shift+r exec regolith-look refresh
@@ -409,6 +409,8 @@ bindsym $mod+x exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
 bindsym $mod+p exec --no-startup-id playerctl -p spotify play-pause
 bindsym $mod+bracketleft exec --no-startup-id playerctl -p spotify previous
 bindsym $mod+bracketright exec --no-startup-id playerctl -p spotify next
+# muting stuff
+bindsym Pause exec --no-startup-id mute_microphone
 
 # exec xautolock -time 10 -detectsleep -locker i3lock-fancy
 # dont letx xsaver take over if video be playing

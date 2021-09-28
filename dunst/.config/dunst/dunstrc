@@ -1,5 +1,6 @@
 [global]
     font = Source Code Pro 13
+    timeout = 15
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -51,7 +52,7 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 52
-    icon_path = /usr/share/icons/Paper/16x16/status:/usr/share/icons/Paper/16x16/devices
+    icon_path = /usr/share/icons/Paper/16x16/status:/usr/share/icons/Paper/16x16/devices:/usr/share/icons/gnome/16x16/apps/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Yaru/16x16/:/usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
 
 
     # the geometry of the window

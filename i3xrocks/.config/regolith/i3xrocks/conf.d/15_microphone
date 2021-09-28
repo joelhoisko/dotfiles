@@ -1,0 +1,5 @@
+# Checks whether your mic os muted or not
+[microphone]
+command=mute_system_tray
+interval=1
+

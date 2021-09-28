@@ -148,3 +148,6 @@ source $PATH_TO_NPM_COMPLETION/npm-completion.sh
 
 # go path
 export PATH=$PATH:/usr/local/go/bin
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"

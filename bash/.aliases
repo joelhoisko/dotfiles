@@ -11,7 +11,7 @@ alias wttr='curl wttr.in/'
 alias bt='bluetoothctl'
 alias website='ssh root@51.15.134.113'
 alias mongotime='echo "killing mongo"; docker kill $(docker ps -q --filter ancestor=dolittle/mongodb); echo "starting mongo"; docker run -d -p 27017:27017 dolittle/mongodb'
-# alias runtime='echo "killing runtime"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:5.0.0-alpha.4); echo "starting runtime"; docker run -p 50052:50052 -p 50053:50053 dolittle/runtime:5.0.0-alpha.4'
+alias runtime='echo "killing runtime:latest-development"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:latest-development); echo "starting runtime:latest-development"; docker run -p 50052:50052 -p 9700:9700 -p 50053:50053 -p 27017:27017 dolittle/runtime:latest-development'
 # alias dotime='cd ~/bin/; docker-compose up;'
 alias ..="cd .."
 alias ...="cd ../.."
@@ -23,11 +23,13 @@ alias dodoc="dolittle-documentation-server"
 alias nuget="mono /usr/local/bin/nuget.exe"
 alias dockup="docker-compose up"
 alias dockdown="docker-compose down"
+alias dockstop="docker-compose stop"
 alias doru="dotnet run"
 alias dobu="dotnet build"
 alias dore="dotnet restore"
 alias dote="dotnet test"
-alias dotime='echo "Killing dolittle/runtime:latest-development"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:latest-development); echo "starting runtime and mongo"; docker run -p 50053:50053 -p 27017:27017 dolittle/runtime:latest-development'
 alias az-refresh="az aks get-credentials -g Infrastructure-Essential -n Cluster-Production-Two --subscription 49a62f35-8ede-4470-982a-593b89874dec"
 alias az-cluster-refresh="az aks get-credentials --resource-group Infrastructure-Essential --name Cluster-Production-Three --admin"
+alias sus="systemctl suspend"
+alias btm="btm -g --color gruvbox"
 
