@@ -32,4 +32,7 @@ alias az-refresh="az aks get-credentials -g Infrastructure-Essential -n Cluster-
 alias az-cluster-refresh="az aks get-credentials --resource-group Infrastructure-Essential --name Cluster-Production-Three --admin"
 alias sus="systemctl suspend"
 alias btm="btm -g --color gruvbox"
+alias git-clean-main='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias git-clean-master='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias git-clean-main-squashed='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 

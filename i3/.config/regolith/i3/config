@@ -218,14 +218,14 @@ bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
 
 # lock the screen
 # uninstalled this gota get taht smexy appletv vids
-# bindsym $mod+Escape exec gnome-screensaver-command -lock
+bindsym $mod+Escape exec gnome-screensaver-command -lock
 # bindsym $mod+Escape exec xscreensaver-command -lock
-bindsym $mod+Escape exec i3lock-fancy -- scrot -z
+#bindsym $mod+Escape exec i3lock-fancy -- scrot -z
 # bindsym $mod+Shift+Escape exec xscreensaver-command -activate
 # bindsym $mod+Escape exec i3lock-fancy
 
 # put the system to sleep
-bindsym $mod+Shift+s exec systemctl suspend
+# bindsym $mod+Shift+s exec systemctl suspend
 
 # shortcuts for common system configuration tasks
 bindsym $mod+c exec gnome-control-center
