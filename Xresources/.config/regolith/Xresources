@@ -3,3 +3,14 @@ i3-wm.bar.position: top
 i3-wm.bar.trayoutput: DP-2-1
 i3xrocks.media-player.player-args: -p spotify
 i3xrocks.weather.location: Oslo
+gnome.terminal.font: Ubuntu Mono 14
+! used to be #181818 while using regolith-look-ubuntu
+St.color0: #1D1B1B
+! used to be #762572 while using regolith-look-ubuntu
+St.color13: #c67bb9
+St.color11: #ff8533
+St.color14: #b3b3b3
+! more blueish color, leaving here as an option
+!St.color14: #8c9fd9
+! the github branch color on zsh like (main)
+St.color1: #d74253

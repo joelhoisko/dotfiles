@@ -218,7 +218,8 @@ bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
 
 # lock the screen
 # uninstalled this gota get taht smexy appletv vids
-bindsym $mod+Escape exec gnome-screensaver-command -lock
+#bindsym $mod+Escape exec gnome-screensaver-command -lock
+bindsym $mod+Escape exec xdg-screensaver lock
 # bindsym $mod+Escape exec xscreensaver-command -lock
 #bindsym $mod+Escape exec i3lock-fancy -- scrot -z
 # bindsym $mod+Shift+Escape exec xscreensaver-command -activate
@@ -393,10 +394,10 @@ exec --no-startup-id $i3-wm.program.notifications
 
 # Refresh wallpaper on screen resolution change
 # exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
-exec --no-startup-id /usr/bin/xeventbind resolution feh --randomize --bg-fill ~/Dropbox/Wallsuffle/BigReso/*
+exec --no-startup-id /usr/bin/xeventbind resolution feh --randomize --bg-fill --auto-rotate ~/Dropbox/Wallsuffle/BigReso/*
 
 # refresh wallpaper on i3 restart
-exec_always --no-startup-id feh --randomize --bg-fill ~/Dropbox/Wallsuffle/BigReso/*
+exec_always --no-startup-id feh --randomize --bg-fill --auto-rotate ~/Dropbox/Wallsuffle/BigReso/*
 
 # for changing kebingins
 # exec_always setxkbmap -option caps:swapescape
