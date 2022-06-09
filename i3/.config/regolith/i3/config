@@ -268,8 +268,9 @@ mode "Resize Mode" {
 bindsym $mod+r mode "Resize Mode"
 
 # Disable titlebar
-new_window pixel 1
-new_float pixel 1
+# Size used to be 1, but i want begger
+new_window pixel 2
+new_float pixel 2
 
 # Gaps (i3-gaps)
 gaps inner 7
@@ -413,6 +414,7 @@ bindsym $mod+bracketright exec --no-startup-id playerctl -p spotify next
 # muting stuff
 bindsym Pause exec --no-startup-id mute_microphone
 
+
 # exec xautolock -time 10 -detectsleep -locker i3lock-fancy
 # dont letx xsaver take over if video be playing
 # exec_always --no-startup-id ~/Dev/lightsonplus/lightson+ -d &
@@ -437,3 +439,6 @@ set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
+
+# set the default microphone to the usb mic from the Dell dock
+exec --no-startup-id pactl set-default-source 'alsa_input.usb-Generic_USB_Audio_200901010001-00.HiFi__hw_Dock__source'

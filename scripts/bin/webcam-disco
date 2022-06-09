@@ -1,0 +1,39 @@
+#! /bin/bash
+
+echo "press q to cancel disco"
+
+while :
+do
+
+    RANDOM_ZOOM=$(( $RANDOM % 400 +100 ))
+    RANDOM_SATURATION=$(( $RANDOM % 255 ))
+    RANDOM_CONTRAST=$(( $RANDOM % 255 ))
+    RANDOM_SHARPNESS=$(( $RANDOM % 255 ))
+    # white balance moves in steps of 10
+    RANDOM_WHITE_BALANCE=$(( ($RANDOM % 550 + 200) * 10))
+
+    echo $RANDOM_ZOOM
+    echo $RANDOM_SATURATION
+    echo $RANDOM_CONTRAST
+    echo $RANDOM_SHARPNESS
+    echo $RANDOM_WHITE_BALANCE   
+
+    echo "DISCOING"
+    # v4l2-ctl -d /dev/video2 --set-ctrl=zoom_absolute=$RANDOM_ZOOM
+    # v4l2-ctl -d /dev/video2 --set-ctrl=saturation=$RANDOM_SATURATION
+    # v4l2-ctl -d /dev/video2 --set-ctrl=contrast=$RANDOM_CONTRAST
+    # v4l2-ctl -d /dev/video2 --set-ctrl=sharpness=$RANDOM_SHARPNESS
+    # v4l2-ctl -d /dev/video2 --set-ctrl=white_balance_temperature=$RANDOM_WHITE_BALANCE
+
+    read -t 1 -N 1 input
+    if [[ $input = "q" ]] || [[ $input = "Q" ]]; then
+        break 
+    fi
+done
+
+v4l2-ctl -d /dev/video2 --set-ctrl=zoom_absolute=100
+v4l2-ctl -d /dev/video2 --set-ctrl=saturation=128
+v4l2-ctl -d /dev/video2 --set-ctrl=contrast=128
+v4l2-ctl -d /dev/video2 --set-ctrl=sharpness=128
+v4l2-ctl -d /dev/video2 --set-ctrl=white_balance_temperature_auto=1
+

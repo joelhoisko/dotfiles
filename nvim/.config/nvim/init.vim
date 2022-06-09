@@ -25,6 +25,7 @@ if dein#load_state('/home/joel/.local/share/dein/')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('leafgarland/typescript-vim')
+  call dein#add('tpope/vim-sleuth')
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
@@ -184,4 +185,3 @@ autocmd Filetype css setlocal ts=2 sw=2 expandtab
 autocmd Filetype sass setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 " autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
-

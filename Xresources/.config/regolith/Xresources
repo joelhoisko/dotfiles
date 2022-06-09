@@ -14,3 +14,4 @@ St.color14: #b3b3b3
 !St.color14: #8c9fd9
 ! the github branch color on zsh like (main)
 St.color1: #d74253
+i3-wm.client.focused.color.child_border: #ff8533
