@@ -19,13 +19,13 @@ do
     echo $RANDOM_WHITE_BALANCE   
 
     echo "DISCOING"
-    # v4l2-ctl -d /dev/video2 --set-ctrl=zoom_absolute=$RANDOM_ZOOM
-    # v4l2-ctl -d /dev/video2 --set-ctrl=saturation=$RANDOM_SATURATION
-    # v4l2-ctl -d /dev/video2 --set-ctrl=contrast=$RANDOM_CONTRAST
-    # v4l2-ctl -d /dev/video2 --set-ctrl=sharpness=$RANDOM_SHARPNESS
-    # v4l2-ctl -d /dev/video2 --set-ctrl=white_balance_temperature=$RANDOM_WHITE_BALANCE
+    v4l2-ctl -d /dev/video2 --set-ctrl=zoom_absolute=$RANDOM_ZOOM
+    v4l2-ctl -d /dev/video2 --set-ctrl=saturation=$RANDOM_SATURATION
+    v4l2-ctl -d /dev/video2 --set-ctrl=contrast=$RANDOM_CONTRAST
+    v4l2-ctl -d /dev/video2 --set-ctrl=sharpness=$RANDOM_SHARPNESS
+    v4l2-ctl -d /dev/video2 --set-ctrl=white_balance_temperature=$RANDOM_WHITE_BALANCE
 
-    read -t 1 -N 1 input
+    read -t 0.5 -N 1 input
     if [[ $input = "q" ]] || [[ $input = "Q" ]]; then
         break 
     fi
