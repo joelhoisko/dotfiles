@@ -25,7 +25,7 @@ do
     v4l2-ctl -d /dev/video2 --set-ctrl=sharpness=$RANDOM_SHARPNESS
     v4l2-ctl -d /dev/video2 --set-ctrl=white_balance_temperature=$RANDOM_WHITE_BALANCE
 
-    read -t 0.5 -N 1 input
+    read -t 0.001 -N 1 input
     if [[ $input = "q" ]] || [[ $input = "Q" ]]; then
         break 
     fi

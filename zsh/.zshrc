@@ -171,4 +171,6 @@ ranger() {
 # for Ruby Gems support
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+# All stuff in Dev
+export PATH="$HOME/Dev:$PATH"
 
