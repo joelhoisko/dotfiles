@@ -69,7 +69,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl)
+#plugins=(git kubectl)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -104,7 +104,7 @@ source $HOME/.aliases
 # setup my path stuff
 export PATH="$HOME/bin:$HOME/.node_modules_global/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-source "$HOME/Dolittle/Development/.bashrc"
+#source "$HOME/Dolittle/Development/.bashrc"
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
 #export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
@@ -146,14 +146,14 @@ zstyle ':completion:*' special-dirs false
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # kubectl autocompletion
-source <(kubectl completion zsh)
+#source <(kubectl completion zsh)
 # minikube completion
-source <(minikube completion zsh)
+#source <(minikube completion zsh)
 # dolittle operatinos stuff
 export PATH="$PATH:$HOME/Dolittle/Operations/Scripts/bash"
 # kube-ps1
-source $HOME/Dev/kube-ps1/kube-ps1.sh
-PROMPT='$(kube_ps1)'$PROMPT
+#source $HOME/Dev/kube-ps1/kube-ps1.sh
+#PROMPT='$(kube_ps1)'$PROMPT
 # disable the symbol
 KUBE_PS1_SYMBOL_ENABLE=false
 KUBE_PS1_NS_ENABLE=false
