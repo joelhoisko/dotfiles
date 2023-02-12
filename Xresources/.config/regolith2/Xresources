@@ -2,6 +2,15 @@
 i3-wm.binding.display: Shift+d+b
 i3-wm.binding.launcher.cmd: Shift+b+d+c
 i3-wm.binding.file_search: Shift+b+d+c+a
+i3-wm.binding.launcher.window: Shift+a+r+t
+# have to disable this like this because firefox snap package cant be started witht the gtk-launch command
+i3-wm.binding.browser: Shift+Alt+g
 # real shit
-i3-wm.binding.split_h: Shift+v
+i3-wm.binding.split_h: v
+i3-wm.binding.split_v: Shift+v
 i3-wm.binding.launcher.app: d
+i3-wm.bar.position: top
+i3xrocks.media-player.player-args: -p spotify
+i3-wm.gaps.inner.size: 7
+i3-wm.gaps.inner.size: 7
+i3-wm.binding.focus_child: Shift+a
