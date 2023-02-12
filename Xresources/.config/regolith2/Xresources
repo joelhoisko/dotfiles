@@ -1,0 +1,7 @@
+# disabling shit
+i3-wm.binding.display: Shift+d+b
+i3-wm.binding.launcher.cmd: Shift+b+d+c
+i3-wm.binding.file_search: Shift+b+d+c+a
+# real shit
+i3-wm.binding.split_h: Shift+v
+i3-wm.binding.launcher.app: d
