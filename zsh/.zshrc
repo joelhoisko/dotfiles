@@ -173,4 +173,6 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 # All stuff in Dev
 export PATH="$HOME/Dev:$PATH"
+# tfenv stuff
+export PATH="$HOME/Dev/.tfenv/bin:$PATH"
 

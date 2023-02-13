@@ -3,7 +3,7 @@ alias upgrade='sudo apt update && sudo apt upgrade'
 alias update='sudo apt update'
 alias install='sudo apt install'
 alias asd='mesleep'
-alias i3conf='cd ~/dotfiles && nvim i3/.config/regolith/i3/config'
+alias i3conf='cd ~/dotfiles && nvim i3/.config/regolith2/i3/config'
 alias pipes.sh='pipes.sh -R -r 0 -s 6 -p 15 -f 100'
 alias ll='ls -lAh'
 alias tasks='task list sort:project'
@@ -11,7 +11,6 @@ alias wttr='curl wttr.in/'
 alias bt='bluetoothctl'
 alias website='ssh root@51.15.134.113'
 alias mongotime='echo "killing mongo"; docker kill $(docker ps -q --filter ancestor=dolittle/mongodb); echo "starting mongo"; docker run -d -p 27017:27017 dolittle/mongodb'
-alias runtime='echo "killing runtime:latest-development"; docker kill $(docker ps -q --filter ancestor=dolittle/runtime:latest-development); echo "starting runtime:latest-development"; docker run -p 50052:50052 -p 9700:9700 -p 50053:50053 -p 27017:27017 dolittle/runtime:latest-development'
 # alias dotime='cd ~/bin/; docker-compose up;'
 alias ..="cd .."
 alias ...="cd ../.."
@@ -19,7 +18,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-alias dodoc="dolittle-documentation-server"
 alias nuget="mono /usr/local/bin/nuget.exe"
 alias dockup="docker-compose up"
 alias dockdown="docker-compose down"
@@ -28,11 +26,9 @@ alias doru="dotnet run"
 alias dobu="dotnet build"
 alias dore="dotnet restore"
 alias dote="dotnet test"
-alias az-refresh="az aks get-credentials -g Infrastructure-Essential -n Cluster-Production-Two --subscription 49a62f35-8ede-4470-982a-593b89874dec"
-alias az-cluster-refresh="az aks get-credentials --resource-group Infrastructure-Essential --name Cluster-Production-Three --admin"
 alias btm="btm -g --color gruvbox"
 alias git-clean-main='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias git-clean-master='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias git-clean-main-squashed='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
-alias flash-lily58='qmk flash -bl dfu'
+alias flash-lily58='qmk flash -bl dfu -kb lily58 -km joelhoisko'
 

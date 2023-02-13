@@ -169,3 +169,8 @@ exec_always --no-startup-id feh --randomize --bg-fill --auto-rotate ~/Dropbox/Wa
 
 # start a web browser
 bindsym $mod+g exec firefox
+
+# my stacked stuff
+bindsym $mod+s layout stacking
+bindsym $mod+e layout toggle split
+
