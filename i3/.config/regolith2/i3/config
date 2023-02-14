@@ -174,3 +174,6 @@ bindsym $mod+g exec firefox
 bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
+# applications
+bindsym Print exec --no-startup-id flameshot gui -p /home/joel/Pictures/screenshots/ -c
+
