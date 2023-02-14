@@ -58,7 +58,7 @@ syntax enable
 " @joel's plugin config here
 
 " this virtualenv has the neovim3 package already installed
-" let g:python3_host_prog='/home/joel/Dev/neovim3/bin/python'
+let g:python3_host_prog='/home/joel/.pyenv/versions/neovim/bin/python'
 
 " Start the autocomplete
 let g:deoplete#enable_at_startup=1
