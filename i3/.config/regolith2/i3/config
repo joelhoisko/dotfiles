@@ -177,3 +177,10 @@ bindsym $mod+e layout toggle split
 # applications
 bindsym Print exec --no-startup-id flameshot gui -p /home/joel/Pictures/screenshots/ -c
 
+# media control
+bindsym $mod+p exec --no-startup-id playerctl -p spotify play-pause
+# use bindcode instead as for some reason bracketleft/bracketright wasn't working
+# https://faq.i3wm.org/question/4158/how-do-i-use-special-characters-as-keys-in-the-config-file.1.html
+bindcode $mod+34 exec --no-startup-id playerctl -p spotify previous
+bindcode $mod+35 exec --no-startup-id playerctl -p spotify next
+

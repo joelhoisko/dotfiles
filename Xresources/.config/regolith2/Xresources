@@ -23,3 +23,6 @@ i3-wm.binding.move_workspace_output_right: n
 i3-wm.client.focused.color.child_border: #ff8533
 i3-wm.client.focused.color.border: #ff8533
 
+regolith.lockscreen.wallpaper.file: /home/joel/Dropbox/Wallsuffle/BigReso/IMG_20210402_150856.jpg
+
+
