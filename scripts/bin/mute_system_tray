@@ -1,10 +1,11 @@
 #! /usr/bin/env bash
+# this script is to be used by i3xrocks in the system tray to show if my mic is muted or not
 
-STATUS=$(pactl list sources | grep -A 5 "Description: USB Audio Microphone" | tail -n 1 | cut -d : -f 2 | xargs)
+STATUS=$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -d : -f 2 | xargs)
 
 if [ "$STATUS" == "yes" ]; then
-    echo "MUTED 🎤"
+    echo "MUTED"
 else
-    echo ""
+    echo "🎤"
 fi
 

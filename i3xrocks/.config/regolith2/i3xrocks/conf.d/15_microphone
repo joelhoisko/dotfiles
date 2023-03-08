@@ -1,0 +1,7 @@
+# Checks whether your mic os muted or not
+[microphone]
+command=mute_system_tray
+interval=once
+# mute_microphone script will send a signal
+signal=10
+

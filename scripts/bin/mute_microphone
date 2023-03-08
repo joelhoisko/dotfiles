@@ -1,12 +1,16 @@
 #! /usr/bin/env bash
 
 pactl set-source-mute @DEFAULT_SOURCE@ toggle
-STATUS=$(pactl list sources | grep -A 5 "Description: USB Audio Microphone" | tail -n 1 | cut -d : -f 2 | xargs)
+STATUS=$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -d : -f 2 | xargs)
 
+# clear the last notification
+dunstctl close
 if [ "$STATUS" == "yes" ]; then
-    notify-send -i audio-input-microphone.png "Muted"
+    notify-send -i /usr/share/icons/gnome/48x48/status/microphone-sensitivity-muted.png "Muted"
 else
-    notify-send "Unmuted"
+    notify-send -i /usr/share/icons/gnome/48x48/devices/audio-input-microphone.png "Unmuted"
 fi
 
+# update i3xrocks tray about it
+pkill -SIGRTMIN+10 i3xrocks
 

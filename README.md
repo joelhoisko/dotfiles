@@ -13,6 +13,8 @@ cronjob for wallpaper changing:
 
 Mute knob is actually the `Pause` key, make a custom shortcut through settings GUI to trigger the `mute_microphone` script.
 
+For the available icons for dunst check `/usr/share/icons`, might have to use the full path when sending them with `notify-send -i <icon-path>`
+
 ## Notifications
 
 For notifications just install `dunst` and relog to get it working.
@@ -24,5 +26,4 @@ To set lockscreen wallpaper, set any value Xresource `regolith.lockscreen.wallpa
 ## Gnome terminal profile
 
 Set `gnome.terminal.update` Xresource to `false` and then your gnome terminal default theme can be changed.
-
 
