@@ -173,4 +173,6 @@ export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/Dev:$PATH"
 # tfenv stuff
 export PATH="$HOME/Dev/.tfenv/bin:$PATH"
+# krew kubectl plugin stuff
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

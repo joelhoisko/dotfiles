@@ -168,7 +168,7 @@ exec --no-startup-id /usr/bin/xeventbind resolution feh --randomize --bg-fill --
 exec_always --no-startup-id feh --randomize --bg-fill --auto-rotate ~/Dropbox/Wallsuffle/BigReso/*
 
 # start a web browser
-bindsym $mod+g exec firefox
+bindsym $mod+g exec chromium-browser
 
 # my stacked stuff
 bindsym $mod+s layout stacking
@@ -184,3 +184,6 @@ bindsym $mod+p exec --no-startup-id playerctl play-pause
 bindcode $mod+34 exec --no-startup-id playerctl -p spotify previous
 bindcode $mod+35 exec --no-startup-id playerctl -p spotify next
 
+# override lock screen keybinding from /usr/share/regolith/i3/config.d/55_session_keybindings
+set_from_resource $i3-wm.program.lock i3-wm.program.lock dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym $mod+Ctrl+Escape exec $i3-wm.program.lock
