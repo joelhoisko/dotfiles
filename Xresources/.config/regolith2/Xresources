@@ -1,10 +1,11 @@
 ! disabling shit
+i3-wm.binding.lock: Ctrl+Escape
 i3-wm.binding.bluetooth: Shift+z
-i3-wm.binding.notification_ui: Shift+z+n
-i3-wm.binding.display: Shift+d+b
-i3-wm.binding.launcher.cmd: Shift+b+d+c
-i3-wm.binding.file_search: Shift+b+d+c+a
-i3-wm.binding.launcher.window: Shift+a+r+t
+i3-wm.binding.notification_ui:
+i3-wm.binding.display:
+i3-wm.binding.launcher.cmd:
+i3-wm.binding.file_search:
+i3-wm.binding.launcher.window:
 ! have to disable this like this because firefox snap package cant be started witht the gtk-launch command
 ! I then set the browser command in i3conf
 i3-wm.binding.browser: Shift+Alt+g
