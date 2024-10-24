@@ -16,7 +16,7 @@ if [ "$NUM_SECONDARY" -eq 1 ]; then
     i3-msg "workspace number 1; move workspace to output $PRIMARY_OUTPUT"
 
     # Move workspaces 2-10 to the single secondary monitor
-    for WS in {2..10}; do
+    for WS in {3..10}; do
         i3-msg "workspace number $WS; move workspace to output $SECONDARY_OUTPUT"
     done
 
