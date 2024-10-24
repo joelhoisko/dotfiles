@@ -1,0 +1,45 @@
+#! /bin/bash
+
+CURRENT=$(i3-msg -t get_workspaces | jq '.[] | select(.focused) | .num')
+
+# Get the names of the outputs
+PRIMARY_OUTPUT=$(xrandr | grep " connected primary" | awk '{print $1}')
+SECONDARY_OUTPUTS=$(xrandr | grep " connected" | grep -v "primary" | awk '{print $1}')
+NUM_SECONDARY=$(echo "$SECONDARY_OUTPUTS" | wc -l)
+
+# Case 1: If there is only 1 secondary monitor
+if [ "$NUM_SECONDARY" -eq 1 ]; then
+    # Get the name of the single secondary monitor
+    SECONDARY_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '1p')
+    
+    # Move workspace 1 to the primary monitor
+    i3-msg "workspace number 1; move workspace to output $PRIMARY_OUTPUT"
+
+    # Move workspaces 2-10 to the single secondary monitor
+    for WS in {2..10}; do
+        i3-msg "workspace number $WS; move workspace to output $SECONDARY_OUTPUT"
+    done
+
+# Case 2: If there are 2 secondary monitors
+elif [ "$NUM_SECONDARY" -eq 2 ]; then
+    # Get the names of the center and rightmost monitors
+    CENTER_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '1p')
+    RIGHTMOST_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '2p')
+
+    # Move workspace 1 to the primary monitor
+    i3-msg "workspace number 1; move workspace to output $PRIMARY_OUTPUT"
+
+    # Move workspaces 2-6 to the center monitor
+    for WS in {2..6}; do
+        i3-msg "workspace number $WS; move workspace to output $CENTER_OUTPUT"
+    done
+
+    # Move workspaces 7-10 to the rightmost monitor
+    for WS in {7..10}; do
+        i3-msg "workspace number $WS; move workspace to output $RIGHTMOST_OUTPUT"
+    done
+else
+    echo "Error: Unsupported number of secondary monitors ($NUM_SECONDARY)."
+fi
+
+i3-msg "workspace number $CURRENT"

@@ -187,3 +187,10 @@ bindcode $mod+35 exec --no-startup-id playerctl -p spotify next
 # override lock screen keybinding from /usr/share/regolith/i3/config.d/55_session_keybindings
 set_from_resource $i3-wm.program.lock i3-wm.program.lock dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 bindsym $mod+Ctrl+Escape exec $i3-wm.program.lock
+
+# mute microphone from keyboard
+bindsym $mod+m exec mute_microphone
+
+# open the tabs
+bindsym $mod+Shift+o exec /usr/bin/chromium-browser web.whatsapp.com web.telegram.org mail.google.com/mail/ calendar.google.com/calendar/u/1/r\?pli\=1 discord.com/channels/614146120888746012/614146120888746023
+

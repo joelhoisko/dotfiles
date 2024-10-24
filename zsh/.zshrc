@@ -175,4 +175,5 @@ export PATH="$HOME/Dev:$PATH"
 export PATH="$HOME/Dev/.tfenv/bin:$PATH"
 # krew kubectl plugin stuff
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
+# work
+export PATH="$HOME/Code/platform/utilities/scripts:$PATH"

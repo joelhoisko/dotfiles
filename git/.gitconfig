@@ -14,7 +14,7 @@
     gud = commit -am
     br = branch
     cleanup = !git remote prune origin && git branch --merged | egrep -v '(^\\*|master|main)' | xargs git branch -d
-	graph = log --pretty=format:'%s %Cgreen%an %C(bold blue)(%ar) %Cred%h%Creset' --graph
+    graph = log --pretty=format:'%s %Cgreen%an %C(bold blue)(%ar) %Cred%h%Creset' --graph
 [merge]
   tool = vimdiff
 [mergetool]
