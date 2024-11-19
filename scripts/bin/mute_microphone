@@ -6,8 +6,15 @@ STATUS=$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -d : -f 2 | xargs)
 # clear the last notification
 dunstctl close
 if [ "$STATUS" == "yes" ]; then
+    # if now muted, enable the good audio quality on the bt headset
+    pactl set-card-profile bluez_card.44_5E_CD_21_3B_14 a2dp_sink
+    pactl suspend-sink bluez_sink.44_5E_CD_21_3B_14.a2dp_sink true
+    pactl suspend-sink bluez_sink.44_5E_CD_21_3B_14.a2dp_sink false
     notify-send -i /usr/share/icons/gnome/48x48/status/microphone-sensitivity-muted.png "Muted"
 else
+    # when we want to speak, enable the shitty mode with the microphone
+    pactl set-card-profile bluez_card.44_5E_CD_21_3B_14 handsfree_head_unit
+    pactl set-default-source bluez_source.44_5E_CD_21_3B_14.handsfree_head_unit
     notify-send -i /usr/share/icons/gnome/48x48/devices/audio-input-microphone.png "Unmuted"
 fi
 

@@ -194,3 +194,5 @@ bindsym $mod+m exec mute_microphone
 # open the tabs
 bindsym $mod+Shift+o exec /usr/bin/chromium-browser web.whatsapp.com web.telegram.org mail.google.com/mail/ calendar.google.com/calendar/u/1/r\?pli\=1 discord.com/channels/614146120888746012/614146120888746023
 
+bindsym $mod+Shift+w exec workspaces
+
