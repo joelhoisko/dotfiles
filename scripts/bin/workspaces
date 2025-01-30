@@ -26,18 +26,30 @@ elif [ "$NUM_SECONDARY" -eq 2 ]; then
     CENTER_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '1p')
     RIGHTMOST_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '2p')
 
-    # Move workspace 1 to the primary monitor
-    i3-msg "workspace number 1; move workspace to output $PRIMARY_OUTPUT"
+    # Check if one monitor is HDMI and the other is DP
+    if [[ "$CENTER_OUTPUT" == HDMI* && "$RIGHTMOST_OUTPUT" == DP* ]] || [[ "$CENTER_OUTPUT" == DP* && "$RIGHTMOST_OUTPUT" == HDMI* ]]; then
+        # If one is HDMI and the other is DP, assign all workspaces to HDMI
+        HDMI_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | grep HDMI)
+        
+        echo "Assigning workspaces to $HDMI_OUTPUT because there is an HDMI and a DP monitor."
 
-    # Move workspaces 2-6 to the center monitor
-    for WS in {2..6}; do
-        i3-msg "workspace number $WS; move workspace to output $CENTER_OUTPUT"
-    done
+        for WS in {3..10}; do
+            i3-msg "workspace number $WS; move workspace to output $HDMI_OUTPUT"
+        done
+    else
+        # If both are DP monitors, distribute workspaces as before
+        echo "Both monitors are DP, distributing workspaces normally."
 
-    # Move workspaces 7-10 to the rightmost monitor
-    for WS in {7..10}; do
-        i3-msg "workspace number $WS; move workspace to output $RIGHTMOST_OUTPUT"
-    done
+        i3-msg "workspace number 1; move workspace to output $PRIMARY_OUTPUT"
+
+        for WS in {2..6}; do
+            i3-msg "workspace number $WS; move workspace to output $CENTER_OUTPUT"
+        done
+
+        for WS in {7..10}; do
+            i3-msg "workspace number $WS; move workspace to output $RIGHTMOST_OUTPUT"
+        done
+    fi
 else
     echo "Error: Unsupported number of secondary monitors ($NUM_SECONDARY)."
 fi
