@@ -177,3 +177,5 @@ export PATH="$HOME/Dev/.tfenv/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # work
 export PATH="$HOME/Code/platform/utilities/scripts:$PATH"
+
+

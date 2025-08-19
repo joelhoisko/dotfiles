@@ -4,3 +4,4 @@ nvim/.config/nvim/plugin/
 ranger/.config/ranger/*
 !ranger/.config/ranger/rc.conf
 zsh/.zsh_history
+auth0

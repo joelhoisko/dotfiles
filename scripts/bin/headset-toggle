@@ -1,0 +1,12 @@
+#!/bin/bash
+
+INFO=$(bluetoothctl info)
+echo $INFO
+if [ "$INFO" = "Missing device address argument" ]; then
+    echo "connecting"
+    bluetoothctl connect 44:5E:CD:21:3B:14
+else
+    echo "disconnecting"
+    bluetoothctl disconnect
+fi
+

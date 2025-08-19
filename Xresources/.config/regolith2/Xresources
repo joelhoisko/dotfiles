@@ -1,6 +1,6 @@
-! disabling shit
 i3-wm.binding.lock: Ctrl+Escape
 i3-wm.binding.bluetooth: Shift+z
+! disabling shit
 i3-wm.binding.notification_ui:
 i3-wm.binding.display:
 i3-wm.binding.launcher.cmd:

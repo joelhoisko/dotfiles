@@ -4,18 +4,23 @@ CURRENT=$(i3-msg -t get_workspaces | jq '.[] | select(.focused) | .num')
 
 # Get the names of the outputs
 PRIMARY_OUTPUT=$(xrandr | grep " connected primary" | awk '{print $1}')
+echo "primary output: $PRIMARY_OUTPUT"
 SECONDARY_OUTPUTS=$(xrandr | grep " connected" | grep -v "primary" | awk '{print $1}')
+echo "secondary outputs: $SECONDARY_OUTPUTS"
 NUM_SECONDARY=$(echo "$SECONDARY_OUTPUTS" | wc -l)
 
 # Case 1: If there is only 1 secondary monitor
 if [ "$NUM_SECONDARY" -eq 1 ]; then
+    echo "Case 1: If there is only 1 secondary monitor"
     # Get the name of the single secondary monitor
     SECONDARY_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '1p')
     
     # Move workspace 1 to the primary monitor
+    echo "move workspace 1 to $PRIMARY_OUTPUT"
     i3-msg "workspace number 1; move workspace to output $PRIMARY_OUTPUT"
 
     # Move workspaces 2-10 to the single secondary monitor
+    echo "move other workspaces to $SECONDARY_OUTPUT"
     for WS in {3..10}; do
         i3-msg "workspace number $WS; move workspace to output $SECONDARY_OUTPUT"
     done
@@ -23,6 +28,7 @@ if [ "$NUM_SECONDARY" -eq 1 ]; then
 # Case 2: If there are 2 secondary monitors
 elif [ "$NUM_SECONDARY" -eq 2 ]; then
     # Get the names of the center and rightmost monitors
+    echo "Case 2: If there are 2 secondary monitors"
     CENTER_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '1p')
     RIGHTMOST_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | sed -n '2p')
 
@@ -32,6 +38,8 @@ elif [ "$NUM_SECONDARY" -eq 2 ]; then
         HDMI_OUTPUT=$(echo "$SECONDARY_OUTPUTS" | grep HDMI)
         
         echo "Assigning workspaces to $HDMI_OUTPUT because there is an HDMI and a DP monitor."
+        # set the output just in case as it doesn't seem to always want to do it
+        xrandr --output HDMI-1 --mode 2560x1440 --right-of eDP-1
 
         for WS in {3..10}; do
             i3-msg "workspace number $WS; move workspace to output $HDMI_OUTPUT"

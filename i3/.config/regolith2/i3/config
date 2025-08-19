@@ -196,3 +196,6 @@ bindsym $mod+Shift+o exec /usr/bin/chromium-browser web.whatsapp.com web.telegra
 
 bindsym $mod+Shift+w exec workspaces
 
+# toggle connection to Razor headset
+bindsym $mod+u exec headset-toggle
+
