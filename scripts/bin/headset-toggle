@@ -4,9 +4,11 @@ INFO=$(bluetoothctl info)
 echo $INFO
 if [ "$INFO" = "Missing device address argument" ]; then
     echo "connecting"
+    notify-send -i /usr/share/icons/gnome/48x48/devices/audio-headphones.png "Connecting"
     bluetoothctl connect 44:5E:CD:21:3B:14
 else
     echo "disconnecting"
+    notify-send -i /usr/share/icons/gnome/48x48/devices/audio-headphones.png "Disconnecting"
     bluetoothctl disconnect
 fi
 
